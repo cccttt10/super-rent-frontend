@@ -1,15 +1,14 @@
 import React from 'react';
 import { Admin, Resource, ListGuesser } from 'react-admin';
-// import { UserList } from './users';
+import { CustomerList } from './resources/customers';
+import { VehicleList } from './resources/vehicles';
 import jsonServerProvider from 'ra-data-json-server';
 
-const dataProvider = jsonServerProvider(
-    'http://localhost:3300'
-);
+const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (
     <Admin dataProvider={dataProvider}>
-        <Resource name="customers" list={ListGuesser} />
-        <Resource name="vehicles" list={ListGuesser} />
+        <Resource name="customers" list={CustomerList} />
+        <Resource name="vehicles" list={VehicleList} />
     </Admin>
 );
 
