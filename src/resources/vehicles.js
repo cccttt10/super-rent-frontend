@@ -1,5 +1,16 @@
 import React from 'react';
-import { List, Datagrid, TextField, NumberField } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    TextField,
+    NumberField,
+    Edit,
+    DisabledInput,
+    TextInput,
+    NumberInput,
+    RadioButtonGroupInput,
+    SimpleForm
+} from 'react-admin';
 
 export const VehicleList = props => (
     <List {...props}>
@@ -14,4 +25,33 @@ export const VehicleList = props => (
             <TextField source="status" />
         </Datagrid>
     </List>
+);
+
+export const VehicleEdit = props => (
+    <Edit {...props}>
+        <SimpleForm>
+            <DisabledInput source="id" />
+            <TextInput source="licence" />
+            <TextInput source="make" />
+            <TextInput source="model" />
+            <NumberInput source="year" />
+            <TextInput source="color" />
+            <NumberInput source="odometer" />
+            <RadioButtonGroupInput
+                source="status"
+                choices={[
+                    { id: 'rented', name: 'rented' },
+                    { id: 'sold', name: 'sold' },
+                    {
+                        id: 'available for rent',
+                        name: 'available for rent'
+                    },
+                    {
+                        id: 'available for sale',
+                        name: 'available for sale'
+                    }
+                ]}
+            />
+        </SimpleForm>
+    </Edit>
 );

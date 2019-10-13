@@ -5,8 +5,8 @@ import {
     ListGuesser,
     EditGuesser
 } from 'react-admin';
-import { CustomerList } from './resources/customers';
-import { VehicleList } from './resources/vehicles';
+import { CustomerList, CustomerEdit } from './resources/customers';
+import { VehicleList, VehicleEdit } from './resources/vehicles';
 import jsonServerProvider from 'ra-data-json-server';
 
 const dataProvider = jsonServerProvider('http://localhost:3300');
@@ -15,12 +15,12 @@ const App = () => (
         <Resource
             name="customers"
             list={CustomerList}
-            edit={EditGuesser}
+            edit={CustomerEdit}
         />
         <Resource
             name="vehicles"
             list={VehicleList}
-            edit={EditGuesser}
+            edit={VehicleEdit}
         />
     </Admin>
 );
