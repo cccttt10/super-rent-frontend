@@ -1,6 +1,6 @@
 ## Configure your environment
 
-1. Follow the backend configuration instructions and start the server.
+1. Follow the [backend configuration instructions](https://github.com/chuntonggao/super-rent-backend/blob/master/README.md) and start the server.
 
 2. [Install Yarn](https://yarnpkg.com/lang/en/docs/install/)
 
