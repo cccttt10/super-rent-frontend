@@ -8,6 +8,8 @@ import {
 import { CustomerList, CustomerEdit } from './resources/customers';
 import { VehicleList, VehicleEdit } from './resources/vehicles';
 import jsonServerProvider from 'ra-data-json-server';
+import CustomerIcon from '@material-ui/icons/Group';
+import VehicleIcon from '@material-ui/icons/DirectionsCar';
 
 const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (
@@ -16,11 +18,13 @@ const App = () => (
             name="customers"
             list={CustomerList}
             edit={CustomerEdit}
+            icon={CustomerIcon}
         />
         <Resource
             name="vehicles"
             list={VehicleList}
             edit={VehicleEdit}
+            icon={VehicleIcon}
         />
     </Admin>
 );
