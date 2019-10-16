@@ -4,6 +4,7 @@ import {
     Datagrid,
     TextField,
     NumberField,
+    BooleanField,
     Edit,
     DisabledInput,
     TextInput,
@@ -19,7 +20,7 @@ export const CustomerList = props => (
             <TextField source="name" />
             <TextField source="phone" />
             <TextField source="driversLicence" />
-            <TextField source="isClubMember" />
+            <BooleanField source="isClubMember" />
             <TextField source="points" />
             <TextField source="fees" />
         </Datagrid>
