@@ -5,7 +5,7 @@ import {
     ListGuesser,
     EditGuesser
 } from 'react-admin';
-import { CustomerList, CustomerEdit } from './resources/customers';
+import { CustomerList, CustomerEdit, CustomerCreate } from './resources/customers';
 import { VehicleList, VehicleEdit } from './resources/vehicles';
 import jsonServerProvider from 'ra-data-json-server';
 import CustomerIcon from '@material-ui/icons/Group';
@@ -18,6 +18,7 @@ const App = () => (
             name="customers"
             list={CustomerList}
             edit={CustomerEdit}
+            create={CustomerCreate}
             icon={CustomerIcon}
         />
         <Resource
