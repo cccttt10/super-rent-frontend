@@ -9,7 +9,8 @@ import {
     TextInput,
     NumberInput,
     RadioButtonGroupInput,
-    SimpleForm
+    SimpleForm,
+    Create
 } from 'react-admin';
 
 export const VehicleList = props => (
@@ -54,4 +55,32 @@ export const VehicleEdit = props => (
             />
         </SimpleForm>
     </Edit>
+);
+
+export const VehicleCreate = props => (
+    <Create {...props}>
+        <SimpleForm>
+            <TextInput source="licence" />
+            <TextInput source="make" />
+            <TextInput source="model" />
+            <NumberInput source="year" />
+            <TextInput source="color" />
+            <NumberInput source="odometer" />
+            <RadioButtonGroupInput
+                source="status"
+                choices={[
+                    { id: 'rented', name: 'rented' },
+                    { id: 'sold', name: 'sold' },
+                    {
+                        id: 'available for rent',
+                        name: 'available for rent'
+                    },
+                    {
+                        id: 'available for sale',
+                        name: 'available for sale'
+                    }
+                ]}
+            />
+        </SimpleForm>
+    </Create>
 );
