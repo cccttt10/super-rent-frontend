@@ -11,11 +11,12 @@ import {
     SelectInput,
     RadioButtonGroupInput,
     SimpleForm,
-    Create
+    Create,
+    Filter
 } from 'react-admin';
 
 export const VehicleList = props => (
-    <List {...props}>
+    <List {...props} filters={<VehicleFilter />}>
         <Datagrid rowClick="edit">
             <TextField source="licence" />
             <TextField source="make" />
@@ -104,4 +105,26 @@ export const VehicleCreate = props => (
             <TextInput source="city" />
         </SimpleForm>
     </Create>
+);
+
+const VehicleFilter = props => (
+    <Filter {...props}>
+        <SelectInput
+            source="vehicleTypeName"
+            label="Type"
+            choices={[
+                { id: 'Compact', name: 'Compact' },
+                { id: 'Mid-size', name: 'Mid-size' },
+                { id: 'Standard', name: 'Standard' },
+                { id: 'Full-size', name: 'Full-size' },
+                { id: 'SUV', name: 'SUV' },
+                { id: 'Truck', name: 'Truck' }
+            ]}
+        />
+        <TextInput
+            label="City"
+            source="city"
+            defaultValue="Vancouver"
+        />
+    </Filter>
 );
