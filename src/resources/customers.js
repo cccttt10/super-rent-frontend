@@ -17,13 +17,9 @@ import {
 export const CustomerList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
-            <TextField source="id" />
-            <TextField source="name" />
-            <TextField source="phone" />
             <TextField source="driversLicence" />
-            <BooleanField source="isClubMember" />
-            <TextField source="points" />
-            <TextField source="fees" />
+            <TextField source="phone" />
+            <TextField source="name" />
         </Datagrid>
     </List>
 );
@@ -31,13 +27,9 @@ export const CustomerList = props => (
 export const CustomerEdit = props => (
     <Edit {...props}>
         <SimpleForm>
-            <DisabledInput source="id" />
-            <TextInput source="name" />
-            <TextInput source="phone" />
             <TextInput source="driversLicence" />
-            <NumberInput source="points" />
-            <NumberInput source="fees" />
-            <BooleanInput source="isClubMember" label="Club member" />
+            <TextInput source="phone" />
+            <TextInput source="name" />
         </SimpleForm>
     </Edit>
 );
@@ -45,12 +37,9 @@ export const CustomerEdit = props => (
 export const CustomerCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="name" />
-            <TextInput source="phone" />
             <TextInput source="driversLicence" />
-            <NumberInput source="points" />
-            <NumberInput source="fees" />
-            <BooleanInput source="isClubMember" label="Club member" defaultValue={false}/>
+            <TextInput source="phone" />
+            <TextInput source="name" />
         </SimpleForm>
     </Create>
 );
