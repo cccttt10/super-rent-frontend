@@ -17,7 +17,7 @@ import {
 export const CustomerList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
-            <TextField source="driversLicence" />
+            <TextField source="driversLicence" label="Driver's Licence"/>
             <TextField source="phone" />
             <TextField source="name" />
         </Datagrid>
@@ -27,7 +27,7 @@ export const CustomerList = props => (
 export const CustomerEdit = props => (
     <Edit {...props}>
         <SimpleForm>
-            <TextInput source="driversLicence" />
+            <TextInput source="driversLicence" label="Driver's Licence"/>
             <TextInput source="phone" />
             <TextInput source="name" />
         </SimpleForm>
@@ -37,7 +37,7 @@ export const CustomerEdit = props => (
 export const CustomerCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="driversLicence" />
+            <TextInput source="driversLicence" label="Driver's Licence"/>
             <TextInput source="phone" />
             <TextInput source="name" />
         </SimpleForm>
