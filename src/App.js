@@ -1,18 +1,9 @@
 import React from 'react';
+import customers from './components/customers/';
 import vehicles from './components/vehicles/';
 
-import {
-    Admin,
-    Resource,
-    ListGuesser,
-    EditGuesser
-} from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import Dashboard from './components/dashboard/index';
-import {
-    CustomerList,
-    CustomerEdit,
-    CustomerCreate
-} from './components/customers';
 
 import {
     ReservationList,
@@ -26,7 +17,6 @@ import {
 } from './components/returns';
 import { RentList, RentEdit, RentCreate } from './components/rents';
 import jsonServerProvider from 'ra-data-json-server';
-import CustomerIcon from '@material-ui/icons/Group';
 
 import ReservationIcon from '@material-ui/icons/AlarmOn';
 import RentIcon from '@material-ui/icons/ShoppingCart';
@@ -35,13 +25,7 @@ import ReturnIcon from '@material-ui/icons/SettingsBackupRestore';
 const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (
     <Admin dashboard={Dashboard} dataProvider={dataProvider}>
-        <Resource
-            name="customers"
-            list={CustomerList}
-            edit={CustomerEdit}
-            create={CustomerCreate}
-            icon={CustomerIcon}
-        />
+        <Resource name="customers" {...customers} />
         <Resource name="vehicles" {...vehicles} />
         <Resource
             name="reservations"
