@@ -40,7 +40,7 @@ export const ReturnList = props => (
 
             <DateField
                 source="date"
-                label="Date"
+                label="Return Date"
                 options={{ format: 'YYYY-MM-dd' }}
             />
 
@@ -66,7 +66,7 @@ export const ReturnCreate = props => (
 
             <DateInput
                 source="date"
-                label="Date"
+                label="Return Date"
                 options={{ format: 'YYYY-MM-dd' }}
             />
         </SimpleForm>
@@ -86,7 +86,7 @@ export const ReturnShow = props => (
 
             <DateField
                 source="date"
-                label="Date"
+                label="Return Date"
                 options={{ format: 'YYYY-MM-dd' }}
             />
 
