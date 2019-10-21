@@ -16,13 +16,14 @@ import {
     ReferenceField,
     NumberInput,
     SimpleForm,
-    Create
+    Create,
+    Filter
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 import * as moment from 'moment';
 
 export const ReservationList = props => (
-    <List {...props}>
+    <List {...props} filters={<ReservationFilter />}>
         <Datagrid rowClick="edit">
             <TextField source="confNum" label="Confirmation #" />
             <TextField
@@ -160,3 +161,32 @@ const validateReservation = values => {
 
     return errors;
 };
+
+const ReservationFilter = props => (
+    <Filter {...props}>
+        <TextInput label="Confirmation #" source="confNum" />
+        <SelectInput
+            source="vehicleTypeName"
+            label="Vehicle Type"
+            choices={[
+                { id: 'Compact', name: 'Compact' },
+                { id: 'Mid-size', name: 'Mid-size' },
+                { id: 'Standard', name: 'Standard' },
+                { id: 'Full-size', name: 'Full-size' },
+                { id: 'SUV', name: 'SUV' },
+                { id: 'Truck', name: 'Truck' }
+            ]}
+        />
+        <TextInput label="Driver's Licence" source="driversLicence" />
+        <DateInput
+            source="fromDate"
+            label="From"
+            options={{ format: 'MM-dd-YYYY' }}
+        />
+        <DateInput
+            source="toDate"
+            label="To"
+            options={{ format: 'MM-dd-YYYY' }}
+        />
+    </Filter>
+);
