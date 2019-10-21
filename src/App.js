@@ -1,4 +1,6 @@
 import React from 'react';
+import vehicles from './components/vehicles/';
+
 import {
     Admin,
     Resource,
@@ -11,11 +13,7 @@ import {
     CustomerEdit,
     CustomerCreate
 } from './components/customers';
-import {
-    VehicleList,
-    VehicleEdit,
-    VehicleCreate
-} from './components/vehicles/vehicles';
+
 import {
     ReservationList,
     ReservationEdit,
@@ -29,7 +27,7 @@ import {
 import { RentList, RentEdit, RentCreate } from './components/rents';
 import jsonServerProvider from 'ra-data-json-server';
 import CustomerIcon from '@material-ui/icons/Group';
-import VehicleIcon from '@material-ui/icons/DirectionsCar';
+
 import ReservationIcon from '@material-ui/icons/AlarmOn';
 import RentIcon from '@material-ui/icons/ShoppingCart';
 import ReturnIcon from '@material-ui/icons/SettingsBackupRestore';
@@ -44,13 +42,7 @@ const App = () => (
             create={CustomerCreate}
             icon={CustomerIcon}
         />
-        <Resource
-            name="vehicles"
-            list={VehicleList}
-            edit={VehicleEdit}
-            create={VehicleCreate}
-            icon={VehicleIcon}
-        />
+        <Resource name="vehicles" {...vehicles} />
         <Resource
             name="reservations"
             list={ReservationList}
