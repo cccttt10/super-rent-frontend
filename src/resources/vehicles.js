@@ -127,7 +127,7 @@ const VehicleFilter = props => (
             source="city"
             defaultValue="Vancouver"
         />
-        <DateInput source="fromDate" label="From" options={{ format: 'YYYY-MM-dd' }} />
-        <DateInput source="toDate" label="To" options={{ format: 'YYYY-MM-dd' }} />
+        <DateInput source="fromDate" label="From" options={{ format: 'MM-dd-YYYY' }} />
+        <DateInput source="toDate" label="To" options={{ format: 'MM-dd-YYYY' }} />
     </Filter>
 );
