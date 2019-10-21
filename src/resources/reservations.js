@@ -19,6 +19,7 @@ import {
     Create
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+import * as moment from 'moment';
 
 export const ReservationList = props => (
     <List {...props}>
@@ -53,7 +54,7 @@ export const ReservationList = props => (
 
 export const ReservationEdit = props => (
     <Edit {...props}>
-        <SimpleForm>
+        <SimpleForm validate={validateReservation}>
             <DisabledInput source="confNum" label="Confirmation #" />
             <SelectInput
                 source="vehicleTypeName"
@@ -96,7 +97,7 @@ export const ReservationEdit = props => (
 
 export const ReservationCreate = props => (
     <Create {...props}>
-        <SimpleForm>
+        <SimpleForm validate={validateReservation}>
             <SelectInput
                 source="vehicleTypeName"
                 label="Vehicle Type"
@@ -135,3 +136,27 @@ export const ReservationCreate = props => (
         </SimpleForm>
     </Create>
 );
+
+const validateReservation = values => {
+    const errors = {};
+    if (!values.vehicleTypeName)
+        errors.vehicleTypeName = [
+            'You must specify a vehicle type'
+        ];
+
+    if (!values.driversLicence)
+        errors.driversLicence = [ 'You must specify a customer' ];
+
+    if (!values.fromDate)
+        errors.fromDate = [ 'You must specify a start date' ];
+
+    if (!values.toDate)
+        errors.toDate = [ 'You must specify an end date' ];
+
+    if (!moment(values.toDate).isSameOrAfter(values.fromDate))
+        errors.toDate = [
+            'The end date must be greater or equal than the start date'
+        ];
+
+    return errors;
+};
