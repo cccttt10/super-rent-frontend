@@ -164,7 +164,17 @@ const validateReservation = values => {
 
 const ReservationFilter = props => (
     <Filter {...props}>
-        <TextInput label="Confirmation #" source="confNum" />
+        <ReferenceInput
+            label="Confirmation #"
+            source="confNum"
+            reference="reservations"
+            perPage={500}
+        >
+            <AutocompleteInput
+                source="confNum"
+                optionText={choice => `${choice.confNum}`}
+            />
+        </ReferenceInput>
         <SelectInput
             source="vehicleTypeName"
             label="Vehicle Type"
@@ -177,7 +187,18 @@ const ReservationFilter = props => (
                 { id: 'Truck', name: 'Truck' }
             ]}
         />
-        <TextInput label="Driver's Licence" source="driversLicence" />
+        <ReferenceInput
+            label="Customer"
+            source="driversLicence"
+            reference="customers"
+            perPage={500}
+        >
+            <AutocompleteInput
+                source="driversLicence"
+                optionText={choice =>
+                    `${choice.driversLicence} (${choice.name})`}
+            />
+        </ReferenceInput>
         <DateInput
             source="fromDate"
             label="From"
