@@ -46,8 +46,7 @@ export const ReservationList = props => (
     </List>
 );
 
-const optionRenderer = choice =>
-    `${choice.driversLicence} (${choice.name})`;
+
 export const ReservationEdit = props => (
     <Edit {...props}>
         <SimpleForm>
