@@ -20,7 +20,7 @@ import {
     ReservationEdit,
     ReservationCreate
 } from './resources/reservations';
-import { ReturnList, ReturnCreate } from './resources/returns';
+import { ReturnList, ReturnCreate, ReturnShow } from './resources/returns';
 import { RentList, RentEdit, RentCreate } from './resources/rents';
 import jsonServerProvider from 'ra-data-json-server';
 import CustomerIcon from '@material-ui/icons/Group';
@@ -64,6 +64,7 @@ const App = () => (
             name="returns"
             list={ReturnList}
             create={ReturnCreate}
+            show={ReturnShow}
             icon={ReturnIcon}
         />
     </Admin>

@@ -5,6 +5,7 @@ import {
     TextField,
     NumberField,
     BooleanField,
+    RichTextField,
     DateField,
     Edit,
     DisabledInput,
@@ -16,13 +17,15 @@ import {
     ReferenceField,
     NumberInput,
     SimpleForm,
-    Create
+    Create,
+    SimpleShowLayout,
+    Show
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
 export const ReturnList = props => (
     <List {...props}>
-        <Datagrid rowClick="edit">
+        <Datagrid rowClick="show">
             <ReferenceField
                 source="rentId"
                 reference="rents"
@@ -44,7 +47,7 @@ export const ReturnList = props => (
 
 export const ReturnCreate = props => (
     <Create {...props}>
-        <SimpleForm>
+        <SimpleForm redirect="show">
             <ReferenceInput
                 label="Rent ID"
                 source="rentId"
@@ -64,4 +67,28 @@ export const ReturnCreate = props => (
             />
         </SimpleForm>
     </Create>
+);
+
+export const ReturnShow = props => (
+    <Show {...props}>
+        <SimpleShowLayout>
+            <ReferenceField
+                source="rentId"
+                reference="rents"
+                label="Rent ID"
+            >
+                <TextField source="rentId" />
+            </ReferenceField>
+
+            <DateField
+                source="date"
+                label="Date"
+                options={{ format: 'YYYY-MM-dd' }}
+            />
+
+            <NumberField source="price" label="Price $" />
+
+            <RichTextField source="returnMessage" label="Details"/>
+        </SimpleShowLayout>
+    </Show>
 );
