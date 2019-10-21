@@ -9,19 +9,19 @@ import {
     CustomerList,
     CustomerEdit,
     CustomerCreate
-} from './resources/customers';
+} from './components/customers';
 import {
     VehicleList,
     VehicleEdit,
     VehicleCreate
-} from './resources/vehicles/vehicles';
+} from './components/vehicles/vehicles';
 import {
     ReservationList,
     ReservationEdit,
     ReservationCreate
-} from './resources/reservations';
-import { ReturnList, ReturnCreate, ReturnShow } from './resources/returns';
-import { RentList, RentEdit, RentCreate } from './resources/rents';
+} from './components/reservations';
+import { ReturnList, ReturnCreate, ReturnShow } from './components/returns';
+import { RentList, RentEdit, RentCreate } from './components/rents';
 import jsonServerProvider from 'ra-data-json-server';
 import CustomerIcon from '@material-ui/icons/Group';
 import VehicleIcon from '@material-ui/icons/DirectionsCar';
