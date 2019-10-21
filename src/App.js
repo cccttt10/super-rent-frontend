@@ -5,6 +5,7 @@ import {
     ListGuesser,
     EditGuesser
 } from 'react-admin';
+import Dashboard from './components/dashboard/index';
 import {
     CustomerList,
     CustomerEdit,
@@ -20,7 +21,11 @@ import {
     ReservationEdit,
     ReservationCreate
 } from './components/reservations';
-import { ReturnList, ReturnCreate, ReturnShow } from './components/returns';
+import {
+    ReturnList,
+    ReturnCreate,
+    ReturnShow
+} from './components/returns';
 import { RentList, RentEdit, RentCreate } from './components/rents';
 import jsonServerProvider from 'ra-data-json-server';
 import CustomerIcon from '@material-ui/icons/Group';
@@ -31,7 +36,7 @@ import ReturnIcon from '@material-ui/icons/SettingsBackupRestore';
 
 const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (
-    <Admin dataProvider={dataProvider}>
+    <Admin dashboard={Dashboard} dataProvider={dataProvider}>
         <Resource
             name="customers"
             list={CustomerList}
