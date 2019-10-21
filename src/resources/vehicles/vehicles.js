@@ -15,10 +15,11 @@ import {
     Filter
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+import rowStyle from './rowStyle';
 
 export const VehicleList = props => (
     <List {...props} filters={<VehicleFilter />}>
-        <Datagrid rowClick="edit">
+        <Datagrid rowClick="edit" rowStyle={rowStyle}>
             <TextField source="vehicleLicence" />
             <TextField source="make" />
             <TextField source="model" />

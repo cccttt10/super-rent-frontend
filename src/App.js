@@ -14,7 +14,7 @@ import {
     VehicleList,
     VehicleEdit,
     VehicleCreate
-} from './resources/vehicles';
+} from './resources/vehicles/vehicles';
 import {
     ReservationList,
     ReservationEdit,
