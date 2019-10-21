@@ -19,7 +19,7 @@ import { DateInput } from 'react-admin-date-inputs';
 export const VehicleList = props => (
     <List {...props} filters={<VehicleFilter />}>
         <Datagrid rowClick="edit">
-            <TextField source="licence" />
+            <TextField source="vehicleLicence" />
             <TextField source="make" />
             <TextField source="model" />
             <TextField source="year" />
@@ -35,7 +35,7 @@ export const VehicleList = props => (
 export const VehicleEdit = props => (
     <Edit {...props}>
         <SimpleForm>
-            <TextInput source="licence" />
+            <TextInput source="vehicleLicence" />
             <TextInput source="make" />
             <TextInput source="model" />
             <TextInput source="year" />
@@ -74,7 +74,7 @@ export const VehicleEdit = props => (
 export const VehicleCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="licence" />
+            <TextInput source="vehicleLicence" />
             <TextInput source="make" />
             <TextInput source="model" />
             <TextInput source="year" />

@@ -16,14 +16,17 @@ import {
     VehicleCreate
 } from './resources/vehicles';
 import {
-   ReservationList,
-   ReservationEdit,
-   ReservationCreate
+    ReservationList,
+    ReservationEdit,
+    ReservationCreate
 } from './resources/reservations';
+import { RentList, RentEdit, RentCreate } from './resources/rents';
 import jsonServerProvider from 'ra-data-json-server';
 import CustomerIcon from '@material-ui/icons/Group';
 import VehicleIcon from '@material-ui/icons/DirectionsCar';
 import ReservationIcon from '@material-ui/icons/AlarmOn';
+import RentIcon from '@material-ui/icons/ShoppingCart';
+
 
 const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (
@@ -48,6 +51,13 @@ const App = () => (
             edit={ReservationEdit}
             create={ReservationCreate}
             icon={ReservationIcon}
+        />
+        <Resource
+            name="rents"
+            list={RentList}
+            edit={RentEdit}
+            create={RentCreate}
+            icon={RentIcon}
         />
     </Admin>
 );

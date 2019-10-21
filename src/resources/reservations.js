@@ -32,6 +32,7 @@ export const ReservationList = props => (
             <ReferenceField
                 source="driversLicence"
                 reference="customers"
+                label="Driver's Licence"
             >
                 <TextField source="driversLicence" />
             </ReferenceField>
@@ -41,11 +42,14 @@ export const ReservationList = props => (
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateField source="toDate" label="To" />
+            <DateField
+                source="toDate"
+                label="To"
+                options={{ format: 'YYYY-MM-dd' }}
+            />
         </Datagrid>
     </List>
 );
-
 
 export const ReservationEdit = props => (
     <Edit {...props}>
