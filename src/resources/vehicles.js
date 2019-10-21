@@ -14,6 +14,7 @@ import {
     Create,
     Filter
 } from 'react-admin';
+import { DateInput } from 'react-admin-date-inputs';
 
 export const VehicleList = props => (
     <List {...props} filters={<VehicleFilter />}>
@@ -126,5 +127,7 @@ const VehicleFilter = props => (
             source="city"
             defaultValue="Vancouver"
         />
+        <DateInput source="fromDate" label="From" options={{ format: 'YYYY-MM-dd' }} />
+        <DateInput source="toDate" label="To" options={{ format: 'YYYY-MM-dd' }} />
     </Filter>
 );
