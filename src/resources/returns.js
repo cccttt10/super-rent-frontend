@@ -23,6 +23,10 @@ import {
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import { DeleteButton } from 'react-admin';
+
 export const ReturnList = props => (
     <List {...props}>
         <Datagrid rowClick="show">
@@ -70,7 +74,7 @@ export const ReturnCreate = props => (
 );
 
 export const ReturnShow = props => (
-    <Show {...props}>
+    <Show actions={<ReturnShowActions />} {...props}>
         <SimpleShowLayout>
             <ReferenceField
                 source="rentId"
@@ -88,7 +92,19 @@ export const ReturnShow = props => (
 
             <NumberField source="price" label="Price $" />
 
-            <RichTextField source="returnMessage" label="Details"/>
+            <RichTextField source="returnMessage" label="Details" />
         </SimpleShowLayout>
     </Show>
+);
+
+const cardActionStyle = {
+    zIndex: 2,
+    display: 'inline-block',
+    float: 'right'
+};
+
+const ReturnShowActions = ({ basePath, data, resource }) => (
+    <CardActions style={cardActionStyle}>
+        <DeleteButton basePath={basePath} record={data} resource="returns"/>
+    </CardActions>
 );
