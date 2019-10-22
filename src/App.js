@@ -16,7 +16,7 @@ import { RentList, RentEdit, RentCreate } from './components/rents';
 import jsonServerProvider from 'ra-data-json-server';
 
 import RentIcon from '@material-ui/icons/ShoppingCart';
-import ReturnIcon from '@material-ui/icons/SettingsBackupRestore';
+import ReturnIcon from '@material-ui/icons/AssignmentReturn';
 
 const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (

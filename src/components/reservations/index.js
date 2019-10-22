@@ -1,7 +1,7 @@
 import ReservationList from './ReservationList';
 import ReservationEdit from './ReservationEdit';
 import ReservationCreate from './ReservationCreate';
-import ReservationIcon from '@material-ui/icons/AlarmOn';
+import ReservationIcon from '@material-ui/icons/AssignmentTurnedIn';
 
 export default {
     list: ReservationList,
