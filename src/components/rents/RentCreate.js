@@ -6,6 +6,7 @@ import {
     Create
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+import * as moment from 'moment';
 
 const RentCreate = props => (
     <Create {...props}>
@@ -49,6 +50,7 @@ const RentCreate = props => (
             </ReferenceInput>
 
             <DateInput
+                defaultValue={moment()}
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}

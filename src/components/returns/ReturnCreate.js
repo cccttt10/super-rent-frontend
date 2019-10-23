@@ -6,6 +6,7 @@ import {
     Create
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+import * as moment from 'moment';
 
 const ReturnCreate = props => (
     <Create {...props}>
@@ -23,6 +24,7 @@ const ReturnCreate = props => (
             </ReferenceInput>
 
             <DateInput
+                defaultValue={moment()}
                 source="date"
                 label="Return Date"
                 options={{ format: 'YYYY-MM-dd' }}

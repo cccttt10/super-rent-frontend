@@ -7,7 +7,8 @@ import {
     Create
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
-import validateReservation from './validateReservation';
+import * as moment from 'moment';
+import validateReservation from './validateReservation'; 
 
 const ReservationCreate = props => (
     <Create {...props}>
@@ -37,7 +38,7 @@ const ReservationCreate = props => (
                 />
             </ReferenceInput>
 
-            <DateInput
+            <DateInput defaultValue={moment()}
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
