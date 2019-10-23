@@ -6,10 +6,11 @@ import {
     SimpleForm,
     Create
 } from 'react-admin';
+import validateVehicle from './validateVehicle';
 
 const VehicleCreate = props => (
     <Create {...props}>
-        <SimpleForm>
+        <SimpleForm validate={validateVehicle}>
             <TextInput source="vehicleLicence" />
             <TextInput source="make" />
             <TextInput source="model" />

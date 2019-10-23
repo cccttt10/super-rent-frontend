@@ -6,10 +6,11 @@ import {
     RadioButtonGroupInput,
     SimpleForm
 } from 'react-admin';
+import validateVehicle from './validateVehicle';
 
 const VehicleEdit = props => (
     <Edit {...props}>
-        <SimpleForm>
+        <SimpleForm validate={validateVehicle}>
             <TextInput source="vehicleLicence" />
             <TextInput source="make" />
             <TextInput source="model" />
