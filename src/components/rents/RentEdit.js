@@ -9,7 +9,7 @@ import {
 import { DateInput } from 'react-admin-date-inputs';
 
 const RentEdit = props => (
-    <Edit {...props}>
+    <Edit undoable={false} {...props}>
         <SimpleForm>
             <DisabledInput source="rentId" label="ID" />
 
