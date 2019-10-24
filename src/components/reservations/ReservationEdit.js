@@ -11,7 +11,7 @@ import { DateInput } from 'react-admin-date-inputs';
 import validateReservation from './validateReservation';
 
 const ReservationEdit = props => (
-    <Edit {...props}>
+    <Edit undoable={false} {...props}>
         <SimpleForm validate={validateReservation}>
             <DisabledInput source="confNum" label="Confirmation #" />
             <SelectInput
