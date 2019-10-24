@@ -1,11 +1,10 @@
 import * as moment from 'moment';
 
-const validateReservation = values => {
+const validateRent = values => {
     const errors = {};
-    if (!values.vehicleTypeName)
-        errors.vehicleTypeName = [
-            'You must specify a vehicle type'
-        ];
+
+    if (!values.vehicleLicence)
+        errors.vehicleLicence = [ 'You must specify a vehicle' ];
 
     if (!values.driversLicence)
         errors.driversLicence = [ 'You must specify a customer' ];
@@ -29,7 +28,8 @@ const validateReservation = values => {
 
     if (moment(values.toDate).isAfter('2020-12-01'))
         errors.toDate = [ 'End date cannot be after 2020-12-01' ];
+
     return errors;
 };
 
-export default validateReservation;
+export default validateRent;

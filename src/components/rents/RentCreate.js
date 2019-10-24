@@ -7,10 +7,11 @@ import {
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 import * as moment from 'moment';
+import validateRent from './validateRent';
 
 const RentCreate = props => (
     <Create {...props}>
-        <SimpleForm>
+        <SimpleForm validate={validateRent}>
             <ReferenceInput
                 label="Vehicle"
                 source="vehicleLicence"

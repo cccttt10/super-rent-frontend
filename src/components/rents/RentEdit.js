@@ -7,10 +7,11 @@ import {
     SimpleForm
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+import validateRent from './validateRent';
 
 const RentEdit = props => (
     <Edit undoable={false} {...props}>
-        <SimpleForm>
+        <SimpleForm validate={validateRent}>
             <DisabledInput source="rentId" label="ID" />
 
             <ReferenceInput
