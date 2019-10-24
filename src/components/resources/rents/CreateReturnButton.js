@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StyledButton from '../../util/StyledButton';
+import StyledButton from '../../layout/StyledButton';
 
 const CreateReturnButton = ({ record }) => {
     if (!record.isReturned) {
