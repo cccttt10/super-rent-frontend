@@ -23,12 +23,12 @@ const VehicleFilter = props => (
         />
         <DateInput
             source="fromDate"
-            label="Reserve From"
+            label="Available From"
             options={{ format: 'MM-dd-YYYY' }}
         />
         <DateInput
             source="toDate"
-            label="Reserve Until"
+            label="Available Until"
             options={{ format: 'MM-dd-YYYY' }}
         />
     </Filter>
