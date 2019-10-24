@@ -2,19 +2,20 @@ import React from 'react';
 import { List, Datagrid, TextField } from 'react-admin';
 import rowStyle from './rowStyle';
 import VehicleFilter from './VehicleFilter';
+import CreateReservationButton from './CreateReservationButton';
+import VehicleShow from './VehicleShow';
+import ColoredStatusField from './ColoredStatusField';
 
 const VehicleList = props => (
     <List {...props} filters={<VehicleFilter />}>
-        <Datagrid rowClick="edit" rowStyle={rowStyle}>
+        <Datagrid rowStyle={rowStyle} expand={<VehicleShow />}>
             <TextField source="vehicleLicence" />
             <TextField source="make" />
-            <TextField source="model" />
-            <TextField source="year" />
-            <TextField source="status" />
+            <ColoredStatusField source="status" />
             <TextField source="vehicleTypeName" label="Type" />
             <TextField source="dayRate" label="$/day" />
-            <TextField source="location" />
             <TextField source="city" />
+            <CreateReservationButton />
         </Datagrid>
     </List>
 );
