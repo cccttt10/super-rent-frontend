@@ -21,7 +21,9 @@ const validateReservation = values => {
             'The end date must be greater or equal than the start date'
         ];
 
-    if (moment(values.fromDate).isBefore(moment()))
+    console.log(values.fromDate);
+
+    if (moment(values.fromDate).isBefore(moment().startOf('day')))
         errors.fromDate = [ 'Start date cannot be in the past' ];
 
     if (moment(values.fromDate).isAfter('2020-12-01'))
