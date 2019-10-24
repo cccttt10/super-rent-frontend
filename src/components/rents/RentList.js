@@ -4,7 +4,8 @@ import {
     Datagrid,
     TextField,
     DateField,
-    ReferenceField
+    ReferenceField,
+    BooleanField
 } from 'react-admin';
 
 const RentList = props => (
@@ -46,6 +47,7 @@ const RentList = props => (
                 label="To"
                 options={{ format: 'YYYY-MM-dd' }}
             />
+            <BooleanField source="isReturned" label="Returned?" />
         </Datagrid>
     </List>
 );
