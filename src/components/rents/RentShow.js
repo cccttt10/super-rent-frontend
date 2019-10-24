@@ -1,18 +1,18 @@
 import React from 'react';
 import {
-    List,
-    Datagrid,
     TextField,
-    DateField,
     ReferenceField,
-    BooleanField
+    DateField,
+    BooleanField,
+    SimpleShowLayout,
+    Show
 } from 'react-admin';
-import CreateReturnButton from './CreateReturnButton';
-import RentShow from './RentShow';
+import CardActions from '@material-ui/core/CardActions';
+import { DeleteButton, EditButton } from 'react-admin';
 
-const RentList = props => (
-    <List {...props}>
-        <Datagrid expand={<RentShow />}>
+const RentShow = props => (
+    <Show actions={<RentShowActions />} {...props} title=" ">
+        <SimpleShowLayout>
             <TextField source="rentId" label="ID" />
             <ReferenceField
                 source="vehicleLicence"
@@ -50,9 +50,39 @@ const RentList = props => (
                 options={{ format: 'YYYY-MM-dd' }}
             />
             <BooleanField source="isReturned" label="Returned?" />
-            <CreateReturnButton />
-        </Datagrid>
-    </List>
+        </SimpleShowLayout>
+    </Show>
 );
 
-export default RentList;
+const cardActionStyle = {
+    zIndex: 2,
+    display: 'inline-block',
+    float: 'right'
+};
+
+const RentShowActions = ({ basePath, data, resource }) => {
+    if (!data.isReturned)
+        return (
+            <CardActions style={cardActionStyle}>
+                <DeleteButton
+                    basePath={basePath}
+                    record={data}
+                    resource="rents"
+                />
+                <EditButton
+                    basePath={basePath}
+                    record={data}
+                    resource="rents"
+                />
+            </CardActions>
+        );
+    else
+        return (
+            <p style={{ color: 'red' }}>
+                This rent was already returned, you can't delete or
+                edit this rent anymore
+            </p>
+        );
+};
+
+export default RentShow;
