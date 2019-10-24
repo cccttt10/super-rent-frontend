@@ -7,10 +7,11 @@ import {
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 import * as moment from 'moment';
+import validateReturn from './validateReturn';
 
 const ReturnCreate = props => (
     <Create {...props}>
-        <SimpleForm redirect="show">
+        <SimpleForm redirect="show" validate={validateReturn}>
             <ReferenceInput
                 label="Rent ID"
                 source="rentId"
@@ -22,7 +23,6 @@ const ReturnCreate = props => (
                     optionText={choice => `${choice.rentId}`}
                 />
             </ReferenceInput>
-
             <DateInput
                 defaultValue={moment()}
                 source="date"
