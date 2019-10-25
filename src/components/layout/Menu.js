@@ -66,10 +66,7 @@ class Menu extends Component {
                     icon={<rents.icon />}
                 >
                     <MenuItemLink
-                        to={{
-                            pathname: '/rents',
-                            search: stringify({ perPage: 10 })
-                        }}
+                        to="/rents"
                         primaryText={`All Rents`}
                         leftIcon={<rents.icon />}
                         onClick={onMenuClick}
