@@ -9,9 +9,17 @@ import reservations from './components/resources/reservations/';
 import rents from './components/resources/rents/';
 import returns from './components/resources/returns/';
 
+import { Layout } from './components/layout/';
+import customRoutes from './util/routes';
+
 const dataProvider = jsonServerProvider('http://localhost:3300');
 const App = () => (
-    <Admin dashboard={Dashboard} dataProvider={dataProvider}>
+    <Admin
+        dashboard={Dashboard}
+        dataProvider={dataProvider}
+        customRoutes={customRoutes}
+        appLayout={Layout}
+    >
         <Resource name="customers" {...customers} />
         <Resource name="vehicles" {...vehicles} />
         <Resource name="reservations" {...reservations} />
