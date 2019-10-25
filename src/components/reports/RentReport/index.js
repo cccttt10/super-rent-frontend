@@ -3,6 +3,7 @@ import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import RentReportPerBranch from './RentReportPerBranch';
 import * as axios from 'axios';
+import { Loading } from 'react-admin';
 
 const styles = {
     flex: { display: 'flex' },
@@ -13,7 +14,7 @@ const styles = {
 };
 
 class RentReport extends Component {
-    state = {};
+    state = { isLoading: true };
 
     componentDidMount() {
         this.fetchData();
@@ -26,8 +27,10 @@ class RentReport extends Component {
         }
     }
 
-    fetchData() {
-        this.fetchDailyRents();
+    async fetchData() {
+        this.setState({ isLoading: true });
+        await this.fetchDailyRents();
+        this.setState({ isLoading: false });
     }
 
     async fetchDailyRents() {
@@ -40,8 +43,15 @@ class RentReport extends Component {
     }
 
     render() {
-        let { dailyRents } = this.state;
+        let { dailyRents, isLoading } = this.state;
         if (dailyRents === undefined) dailyRents = [];
+        if (isLoading)
+            return (
+                <Loading
+                    loadingPrimary="Generating Report..."
+                    loadingSecondary=""
+                />
+            );
         return (
             <div style={styles.flex}>
                 <div style={styles.leftCol}>
