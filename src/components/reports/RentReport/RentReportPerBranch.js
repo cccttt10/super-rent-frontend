@@ -78,7 +78,7 @@ const RentReportPerBranch = ({
                         key={record.rentId}
                         button
                         component={Link}
-                        to={`/rents/${record.rentId}`}
+                        to={`/rents/${record.rentId}/show`}
                     >
                         <ListItemText
                             primary={`Rent ID: ${record.rentId}`}
