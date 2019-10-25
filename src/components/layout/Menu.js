@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import { withRouter } from 'react-router-dom';
 import { DashboardMenuItem, MenuItemLink } from 'react-admin';
+import { stringify } from 'query-string';
 
 import customers from '../resources/customers';
 import vehicles from '../resources/vehicles';
@@ -29,7 +31,7 @@ class Menu extends Component {
 
     render() {
         let { onMenuClick, open } = this.props;
-
+        console.log(moment().format('YYYY-MM-DD'));
         return (
             <div>
                 <DashboardMenuItem onClick={onMenuClick} />
@@ -64,13 +66,16 @@ class Menu extends Component {
                     icon={<rents.icon />}
                 >
                     <MenuItemLink
-                        to={`/rents`}
+                        to={{
+                            pathname: '/rents',
+                            search: stringify({ perPage: 10 })
+                        }}
                         primaryText={`All Rents`}
                         leftIcon={<rents.icon />}
                         onClick={onMenuClick}
                     />
                     <MenuItemLink
-                        to={`/dailyrents`}
+                        to="/reports/rents"
                         primaryText={`Today's Rents`}
                         leftIcon={<rents.icon />}
                         onClick={onMenuClick}

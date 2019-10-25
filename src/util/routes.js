@@ -1,9 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import rents from '../components/resources/rents/';
-import returns from '../components/resources/returns/';
+// import rents from '../components/resources/rents/';
+// import returns from '../components/resources/returns/';
+import reports from '../components/reports';
 
 export default [
-    <Route exact path="/dailyrents" component={rents.report} />,
-    <Route exact path="/dailyreturns" component={returns.report} />
+    <Route
+        exact
+        path="/reports/rents"
+        component={reports.rents}
+    />
+    // <Route exact path="/report/returns" component={returns.report} />
 ];

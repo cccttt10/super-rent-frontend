@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
-import DailyRents from './DailyRents';
+import RentReportPerBranch from './RentReportPerBranch';
 import * as axios from 'axios';
 
 const styles = {
@@ -12,7 +12,7 @@ const styles = {
     singleCol: { marginTop: '2em', marginBottom: '2em' }
 };
 
-class Dashboard extends Component {
+class RentReport extends Component {
     state = {};
 
     componentDidMount() {
@@ -47,7 +47,7 @@ class Dashboard extends Component {
                 <div style={styles.leftCol}>
                     {dailyRents.map(record => (
                         <div style={styles.singleCol}>
-                            <DailyRents
+                            <RentReportPerBranch
                                 dailyRentsPerBranch={record}
                             />
                         </div>
@@ -62,4 +62,4 @@ const mapStateToProps = state => ({
     version: state.admin.ui.viewVersion
 });
 
-export default compose(connect(mapStateToProps))(Dashboard);
+export default compose(connect(mapStateToProps))(RentReport);
