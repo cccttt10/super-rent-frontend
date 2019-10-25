@@ -5,10 +5,12 @@ import VehicleFilter from './VehicleFilter';
 import CreateReservationButton from './CreateReservationButton';
 import VehicleShow from './VehicleShow';
 import ColoredStatusField from './ColoredStatusField';
+import TabbedDataGrid from './TabbedDataGrid';
 
 const VehicleList = props => (
     <List {...props} filters={<VehicleFilter />}>
-        <Datagrid rowStyle={rowStyle} expand={<VehicleShow />}>
+        <TabbedDataGrid rowStyle={rowStyle} expand={<VehicleShow />}/>
+        {/* <Datagrid rowStyle={rowStyle} expand={<VehicleShow />}>
             <TextField source="vehicleLicence" />
             <TextField source="make" />
             <ColoredStatusField source="status" />
@@ -16,7 +18,7 @@ const VehicleList = props => (
             <TextField source="dayRate" label="$/day" />
             <TextField source="city" />
             <CreateReservationButton />
-        </Datagrid>
+        </Datagrid> */}
     </List>
 );
 
