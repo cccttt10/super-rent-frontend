@@ -5,10 +5,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import CommentIcon from '@material-ui/icons/Comment';
 import Divider from '@material-ui/core/Divider';
 import { Link } from 'react-router-dom';
-import CardIcon from '../../reusables/CardIcon';
+import LetterAvatar from '../../reusables/LetterAvatar';
 
 const styles = theme => ({
     main: {
@@ -48,7 +47,11 @@ const RentReportPerBranch = ({
     classes
 }) => (
     <div className={classes.main}>
-        <CardIcon Icon={CommentIcon} bgColor="#f44336" />
+        <LetterAvatar
+            letters={dailyRentsPerBranch.branch.city
+                .split('')
+                .slice(0, 2)}
+        />
         <Card className={classes.card}>
             <Typography className={classes.title} color="textPrimary">
                 {dailyRentsPerBranch.branch.city}
@@ -72,10 +75,10 @@ const RentReportPerBranch = ({
             <List>
                 {dailyRentsPerBranch.dailyRents.map(record => (
                     <ListItem
-                     key={record.rentId}
-                    button
-                    component={Link}
-                    to={`/rents/${record.rentId}`}
+                        key={record.rentId}
+                        button
+                        component={Link}
+                        to={`/rents/${record.rentId}`}
                     >
                         <ListItemText
                             primary={`Rent ID: ${record.rentId}`}
