@@ -72,7 +72,7 @@ const RentReportPerBranch = ({
                 {dailyRentsPerBranch.dailyRents.length}
             </Typography>
             <Divider />
-            <List>
+            <List dense={true}>
                 {dailyRentsPerBranch.dailyRents.map(record => (
                     <ListItem
                         key={record.rentId}
