@@ -4,14 +4,7 @@ import { connect } from 'react-redux';
 import RentReportPerBranch from './RentReportPerBranch';
 import * as axios from 'axios';
 import { Loading } from 'react-admin';
-
-const styles = {
-    flex: { display: 'flex' },
-    flexColumn: { display: 'flex', flexDirection: 'column' },
-    leftCol: { flex: 1, marginRight: '1em' },
-    rightCol: { flex: 1, marginLeft: '1em' },
-    singleCol: { marginTop: '2em', marginBottom: '2em' }
-};
+import colStyles from '../colStyles';
 
 class RentReport extends Component {
     state = { isLoading: true };
@@ -53,10 +46,10 @@ class RentReport extends Component {
                 />
             );
         return (
-            <div style={styles.flex}>
-                <div style={styles.leftCol}>
+            <div style={colStyles.flex}>
+                <div style={colStyles.leftCol}>
                     {dailyRents.map(record => (
-                        <div style={styles.singleCol}>
+                        <div style={colStyles.singleCol}>
                             <RentReportPerBranch
                                 dailyRentsPerBranch={record}
                             />

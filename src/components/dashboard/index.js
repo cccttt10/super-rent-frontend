@@ -39,22 +39,25 @@ class Dashboard extends Component {
         this.setState({ dailyRents });
     }
 
+    // render() {
+    //     let { dailyRents } = this.state;
+    //     if (dailyRents === undefined) dailyRents = [];
+    //     return (
+    //         <div style={styles.flex}>
+    //             <div style={styles.leftCol}>
+    //                 {dailyRents.map(record => (
+    //                     <div style={styles.singleCol}>
+    //                         <DailyRents
+    //                             dailyRentsPerBranch={record}
+    //                         />
+    //                     </div>
+    //                 ))}
+    //             </div>
+    //         </div>
+    //     );
+    // }
     render() {
-        let { dailyRents } = this.state;
-        if (dailyRents === undefined) dailyRents = [];
-        return (
-            <div style={styles.flex}>
-                <div style={styles.leftCol}>
-                    {dailyRents.map(record => (
-                        <div style={styles.singleCol}>
-                            <DailyRents
-                                dailyRentsPerBranch={record}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        );
+        return <p></p>
     }
 }
 
