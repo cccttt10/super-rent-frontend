@@ -51,7 +51,7 @@ const RentCreate = props => (
             </ReferenceInput>
 
             <DateInput
-                defaultValue={moment()}
+                // defaultValue={moment().local()}
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
