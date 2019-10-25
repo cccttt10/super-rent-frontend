@@ -20,7 +20,7 @@ const ReservationList = props => (
             <ReferenceField
                 source="driversLicence"
                 reference="customers"
-                label="Driver's Licence"
+                label="Customer"
             >
                 <TextField source="driversLicence" />
             </ReferenceField>
