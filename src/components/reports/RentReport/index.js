@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
+import Card from '@material-ui/core/Card';
 import RentReportPerBranch from './RentReportPerBranch';
 import * as axios from 'axios';
-import { Loading } from 'react-admin';
+import { Title, Loading } from 'react-admin';
 import colStyles from '../colStyles';
 
 class RentReport extends Component {
@@ -40,21 +41,27 @@ class RentReport extends Component {
         if (dailyRents === undefined) dailyRents = [];
         if (isLoading)
             return (
-                <Loading
-                    loadingPrimary="Generating Report..."
-                    loadingSecondary=""
-                />
+                <div>
+                    <Title title="Today's Rents" />
+                    <Loading
+                        loadingPrimary="Generating Report..."
+                        loadingSecondary="Server is working hard.."
+                    />
+                </div>
             );
         return (
-            <div style={colStyles.flex}>
-                <div style={colStyles.leftCol}>
-                    {dailyRents.map(record => (
-                        <div style={colStyles.singleCol}>
-                            <RentReportPerBranch
-                                dailyRentsPerBranch={record}
-                            />
-                        </div>
-                    ))}
+            <div>
+                <Title title="Today's Rents" />
+                <div style={colStyles.flex}>
+                    <div style={colStyles.leftCol}>
+                        {dailyRents.map(record => (
+                            <div style={colStyles.singleCol}>
+                                <RentReportPerBranch
+                                    dailyRentsPerBranch={record}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         );
