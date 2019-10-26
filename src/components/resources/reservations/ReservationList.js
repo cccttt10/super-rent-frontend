@@ -21,6 +21,7 @@ const ReservationList = props => (
                 source="driversLicence"
                 reference="customers"
                 label="Customer"
+                linkType="show"
             >
                 <TextField source="driversLicence" />
             </ReferenceField>

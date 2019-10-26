@@ -18,6 +18,7 @@ const RentList = props => (
                 source="vehicleLicence"
                 reference="vehicles"
                 label="Vehicle Licence"
+                linkType="show"
             >
                 <TextField source="vehicleLicence" />
             </ReferenceField>
@@ -26,6 +27,7 @@ const RentList = props => (
                 source="driversLicence"
                 reference="customers"
                 label="Driver's Licence"
+                linkType="show"
             >
                 <TextField source="driversLicence" />
             </ReferenceField>
@@ -35,6 +37,7 @@ const RentList = props => (
                 reference="reservations"
                 label="Reservation #"
                 allowEmpty
+                linkType="show"
             >
                 <TextField source="confNum" />
             </ReferenceField>

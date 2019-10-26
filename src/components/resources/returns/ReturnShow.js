@@ -18,6 +18,7 @@ const ReturnShow = props => (
                 source="rentId"
                 reference="rents"
                 label="Rent ID"
+                linkType="show"
             >
                 <TextField source="rentId" />
             </ReferenceField>
