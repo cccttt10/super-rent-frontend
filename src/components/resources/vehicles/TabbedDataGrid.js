@@ -12,6 +12,11 @@ const datagridStyles = {
 };
 
 class TabbedDatagrid extends React.Component {
+
+    componentDidMount() {
+        const { filterValues, setFilters } = this.props;
+        setFilters({ ...filterValues, status: 'all' });
+    }
     tabs = [
         { id: 'all', name: 'all' },
         { id: 'available', name: 'available' },
