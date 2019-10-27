@@ -4,7 +4,8 @@ import {
     Datagrid,
     TextField,
     DateField,
-    ReferenceField
+    ReferenceField,
+    EditButton
 } from 'react-admin';
 import ReservationFilter from './ReservationFilter';
 
@@ -36,6 +37,7 @@ const ReservationList = props => (
                 label="To"
                 options={{ format: 'YYYY-MM-dd' }}
             />
+            <EditButton />
         </Datagrid>
     </List>
 );

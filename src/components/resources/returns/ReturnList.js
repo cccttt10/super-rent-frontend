@@ -5,7 +5,8 @@ import {
     TextField,
     NumberField,
     DateField,
-    ReferenceField
+    ReferenceField,
+    ShowButton
 } from 'react-admin';
 
 const ReturnList = props => (
@@ -27,6 +28,7 @@ const ReturnList = props => (
             />
 
             <NumberField source="price" label="Price $" />
+            <ShowButton />
         </Datagrid>
     </List>
 );
