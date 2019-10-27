@@ -3,14 +3,15 @@ import compose from 'recompose/compose';
 import { connect } from 'react-redux';
 import ReturnReportPerBranch from './ReturnReportPerBranch';
 import * as axios from 'axios';
-import { Title, Loading } from 'react-admin';
+import { Title } from 'react-admin';
 import colStyles from '../colStyles';
 import BranchFilter from '../BranchFilter';
+import Loader from '../../reusables/Loader';
 
 class ReturnReport extends Component {
     constructor(props) {
         super(props);
-        this.state = { isLoading: true, selectedBranch:null };
+        this.state = { isLoading: true, selectedBranch: null };
         this.setBranchFilter = this.setBranchFilter.bind(this);
     }
 
@@ -26,7 +27,7 @@ class ReturnReport extends Component {
     }
 
     setBranchFilter(selectedBranch) {
-        this.setState({...this.state, selectedBranch})
+        this.setState({ ...this.state, selectedBranch });
     }
 
     async fetchData() {
@@ -66,10 +67,7 @@ class ReturnReport extends Component {
             return (
                 <div>
                     <Title title="Today's Returns" />
-                    <Loading
-                        loadingPrimary="Generating Report..."
-                        loadingSecondary="Server is working hard.."
-                    />
+                    <Loader />
                 </div>
             );
         return (

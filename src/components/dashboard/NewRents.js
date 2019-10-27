@@ -5,11 +5,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import CommentIcon from '@material-ui/icons/Comment';
+import RentIcon from '@material-ui/icons/ShoppingCart';
 import Divider from '@material-ui/core/Divider';
 import { Link } from 'react-router-dom';
 
-import CardIcon from './CardIcon';
+import CardIcon from '../reusables/CardIcon';
 
 const styles = theme => ({
     main: {
@@ -44,18 +44,17 @@ const styles = theme => ({
 
 const location = {
     pathname: 'rents'
-    // query: { filter: JSON.stringify({ status: 'pending' }) },
 };
 
-const TodayRents = ({ rents = [], num, classes }) => (
+const NewRents = ({ newRents = [], num, classes }) => (
     <div className={classes.main}>
-        <CardIcon Icon={CommentIcon} bgColor="#f44336" />
+        <CardIcon Icon={RentIcon} bgColor="#f44336" />
         <Card className={classes.card}>
             <Typography
                 className={classes.title}
                 color="textSecondary"
             >
-                Today's Rents
+                New Rents
             </Typography>
             <Typography
                 variant="headline"
@@ -68,16 +67,17 @@ const TodayRents = ({ rents = [], num, classes }) => (
             </Typography>
             <Divider />
             <List>
-                {rents.map(record => (
+                {newRents.map(record => (
                     <ListItem
-                        key={record.id}
+                        key={record.rentId}
                         button
                         component={Link}
-                        to={`/rents/${record.id}`}
+                        to={`/rents/${record.rentId}/edit`}
+                        
                     >
                         <ListItemText
-                            primary={record.id}
-                            secondary={record.price}
+                            primary={`ID: ${record.rentId}`}
+                            secondary={`${record.make} ${record.model} ${record.vehicleTypeName}`}
                             className={classes.listItemText}
                             style={{ paddingRight: 0 }}
                         />
@@ -88,4 +88,4 @@ const TodayRents = ({ rents = [], num, classes }) => (
     </div>
 );
 
-export default withStyles(styles)(TodayRents);
+export default withStyles(styles)(NewRents);
