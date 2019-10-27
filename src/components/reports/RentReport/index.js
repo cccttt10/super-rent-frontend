@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
 import { connect } from 'react-redux';
-import Card from '@material-ui/core/Card';
 import RentReportPerBranch from './RentReportPerBranch';
 import * as axios from 'axios';
 import { Title, Loading } from 'react-admin';
 import colStyles from '../colStyles';
+import BranchFilter from '../BranchFilter';
 
 class RentReport extends Component {
-    state = { isLoading: true };
+    constructor(props) {
+        super(props);
+        this.state = { isLoading: true, selectedBranch:null };
+        this.setBranchFilter = this.setBranchFilter.bind(this);
+    }
 
     componentDidMount() {
         this.fetchData();
@@ -19,6 +23,10 @@ class RentReport extends Component {
         if (this.props.version !== prevProps.version) {
             this.fetchData();
         }
+    }
+
+    setBranchFilter(selectedBranch) {
+        this.setState({...this.state, selectedBranch})
     }
 
     async fetchData() {
@@ -33,12 +41,27 @@ class RentReport extends Component {
         );
         const dailyRents = response.data;
         console.log(dailyRents);
-        this.setState({ dailyRents });
+        const branches = dailyRents.map(entry => entry.branch);
+        console.log(branches);
+        this.setState({ dailyRents, branches });
     }
 
     render() {
-        let { dailyRents, isLoading } = this.state;
+        let {
+            dailyRents,
+            branches,
+            isLoading,
+            selectedBranch
+        } = this.state;
         if (dailyRents === undefined) dailyRents = [];
+        else if (selectedBranch)
+            dailyRents = dailyRents.filter(
+                dailyRent =>
+                    dailyRent.branch.city === selectedBranch.city &&
+                    dailyRent.branch.location ===
+                        selectedBranch.location
+            );
+        if (branches === undefined) branches = [];
         if (isLoading)
             return (
                 <div>
@@ -52,6 +75,10 @@ class RentReport extends Component {
         return (
             <div>
                 <Title title="Today's Rents" />
+                <BranchFilter
+                    setBranchFilter={this.setBranchFilter}
+                    branches={branches}
+                />
                 <div style={colStyles.flex}>
                     <div style={colStyles.leftCol}>
                         {dailyRents.map(record => (
