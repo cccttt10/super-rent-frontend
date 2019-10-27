@@ -6,7 +6,7 @@
 
 3. Clone your repository by running `git clone REPO_URL` on the command line. You get the `REPO_URL` by clicking on the green button on the GitHub repository page.
 
-## Project commands
+## Development mode
 
 Once your environment is configured you need to further prepare the project's tooling and dependencies. In the project directory:
 
