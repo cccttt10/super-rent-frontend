@@ -24,7 +24,7 @@ const ReturnCreate = props => (
                 />
             </ReferenceInput>
             <DateInput
-                defaultValue={moment()}
+                // defaultValue={moment()}
                 source="date"
                 label="Return Date"
                 options={{ format: 'YYYY-MM-dd' }}
