@@ -94,7 +94,7 @@ class Menu extends Component {
                         onClick={onMenuClick}
                     />
                     <MenuItemLink
-                        to={`/dailyreturns`}
+                        to={`/reports/returns`}
                         primaryText={`Today's Returns`}
                         leftIcon={<returns.icon />}
                         onClick={onMenuClick}

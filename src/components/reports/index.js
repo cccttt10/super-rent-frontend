@@ -1,3 +1,4 @@
 import RentReport from './RentReport/';
+import ReturnReport from './ReturnReport/';
 
-export default { rents: RentReport };
+export default { rents: RentReport, returns: ReturnReport };
