@@ -1,9 +1,11 @@
 {
   "name": "super-rent-frontend",
+  "homepage": "https://chuntonggao.github.io/super-rent-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "gh-pages": "^2.1.1",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "ra-data-json-server": "^2.9.7",
@@ -17,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
