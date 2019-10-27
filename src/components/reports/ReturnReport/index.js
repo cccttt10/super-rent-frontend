@@ -38,7 +38,7 @@ class ReturnReport extends Component {
 
     async fetchDailyReturns() {
         const response = await axios.get(
-            'http://localhost:3300/reports/returns'
+            `${process.env.REACT_APP_API_URL}/reports/returns`
         );
         const dailyReturns = response.data;
         console.log(dailyReturns);

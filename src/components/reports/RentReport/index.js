@@ -38,7 +38,7 @@ class RentReport extends Component {
 
     async fetchDailyRents() {
         const response = await axios.get(
-            'http://localhost:3300/reports/rents'
+            `${process.env.REACT_APP_API_URL}/reports/rents`
         );
         const dailyRents = response.data;
         console.log(dailyRents);

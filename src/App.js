@@ -12,7 +12,7 @@ import returns from './components/resources/returns/';
 import { Layout } from './components/layout/';
 import customRoutes from './util/routes';
 
-const dataProvider = jsonServerProvider('http://localhost:3300');
+const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 const App = () => (
     <Admin
         dashboard={Dashboard}

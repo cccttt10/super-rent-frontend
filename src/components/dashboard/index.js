@@ -44,7 +44,7 @@ class Dashboard extends Component {
 
     async fetchNewRents() {
         const responseRents = await axios.get(
-            'http://localhost:3300/reports/rents'
+            `${process.env.REACT_APP_API_URL}/reports/rents`
         );
         const data = responseRents.data;
         console.log(data);
@@ -55,10 +55,10 @@ class Dashboard extends Component {
         console.log(newRents);
 
         const responseCustomers = await axios.get(
-            'http://localhost:3300/customers'
+            `${process.env.REACT_APP_API_URL}/customers`
         );
         const responseVehicles = await axios.get(
-            'http://localhost:3300/vehicles'
+            `${process.env.REACT_APP_API_URL}/vehicles`
         );
         const numCustomers = responseCustomers.data.length;
         const numVehicles = responseVehicles.data.length;
