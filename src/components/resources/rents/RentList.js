@@ -4,7 +4,8 @@ import {
     Datagrid,
     List,
     ReferenceField,
-    TextField} from 'react-admin';
+    TextField
+} from 'react-admin';
 
 import CustomDateField from '../../reusables/CustomDateField';
 import CreateReturnButton from './CreateReturnButton';

@@ -9,7 +9,8 @@ import {
     orange,
     pink,
     purple,
-    red} from '@material-ui/core/colors';
+    red
+} from '@material-ui/core/colors';
 import { withStyles } from '@material-ui/core/styles';
 import React from 'react';
 

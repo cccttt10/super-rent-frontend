@@ -1,6 +1,6 @@
 import CardActions from '@material-ui/core/CardActions';
 import React from 'react';
-import { Show,SimpleShowLayout, TextField } from 'react-admin';
+import { Show, SimpleShowLayout, TextField } from 'react-admin';
 import { DeleteButton, EditButton } from 'react-admin';
 
 import ColoredStatusField from './ColoredStatusField';

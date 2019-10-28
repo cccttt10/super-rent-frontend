@@ -1,5 +1,5 @@
 import React from 'react';
-import { Datagrid, EditButton,List, TextField } from 'react-admin';
+import { Datagrid, EditButton, List, TextField } from 'react-admin';
 
 const CustomerList = props => (
     <List {...props}>

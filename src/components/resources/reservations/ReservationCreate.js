@@ -5,7 +5,8 @@ import {
     Create,
     ReferenceInput,
     SelectInput,
-    SimpleForm} from 'react-admin';
+    SimpleForm
+} from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
 import validateReservation from './validateReservation';

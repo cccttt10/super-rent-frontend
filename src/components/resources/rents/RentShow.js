@@ -5,7 +5,8 @@ import {
     ReferenceField,
     Show,
     SimpleShowLayout,
-    TextField} from 'react-admin';
+    TextField
+} from 'react-admin';
 import { DeleteButton, EditButton } from 'react-admin';
 
 import CustomDateField from '../../reusables/CustomDateField';

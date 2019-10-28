@@ -1,5 +1,5 @@
 import React from 'react';
-import { AutocompleteInput, Create,ReferenceInput, SimpleForm } from 'react-admin';
+import { AutocompleteInput, Create, ReferenceInput, SimpleForm } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
 import validateRent from './validateRent';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Datagrid, EditButton,List, ReferenceField, TextField } from 'react-admin';
+import { Datagrid, EditButton, List, ReferenceField, TextField } from 'react-admin';
 
 import CustomDateField from '../../reusables/CustomDateField';
 import ReservationFilter from './ReservationFilter';

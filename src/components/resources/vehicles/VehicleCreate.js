@@ -4,7 +4,8 @@ import {
     RadioButtonGroupInput,
     SelectInput,
     SimpleForm,
-    TextInput} from 'react-admin';
+    TextInput
+} from 'react-admin';
 
 import validateVehicle from './validateVehicle';
 

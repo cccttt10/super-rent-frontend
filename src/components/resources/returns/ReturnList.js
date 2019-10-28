@@ -5,7 +5,8 @@ import {
     NumberField,
     ReferenceField,
     ShowButton,
-    TextField} from 'react-admin';
+    TextField
+} from 'react-admin';
 
 import CustomDateField from '../../reusables/CustomDateField';
 
