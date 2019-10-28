@@ -1,7 +1,8 @@
-import React from 'react';
-import { TextField, SimpleShowLayout, Show } from 'react-admin';
 import CardActions from '@material-ui/core/CardActions';
+import React from 'react';
+import { Show,SimpleShowLayout, TextField } from 'react-admin';
 import { DeleteButton, EditButton } from 'react-admin';
+
 import ColoredStatusField from './ColoredStatusField';
 
 const VehicleShow = props => (

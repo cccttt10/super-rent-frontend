@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import * as moment from 'moment-timezone';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const CustomDateField = ({ source, record = {}, showTime = false }) => {
     const format = showTime ? 'YYYY-MM-DD HH:mm:ss' : 'YYYY-MM-DD';

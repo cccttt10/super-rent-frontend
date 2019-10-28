@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, SelectInput, Filter } from 'react-admin';
+import { Filter,SelectInput, TextInput } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
 const VehicleFilter = props => (

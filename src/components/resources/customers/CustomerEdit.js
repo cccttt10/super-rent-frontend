@@ -1,5 +1,6 @@
 import React from 'react';
-import { Edit, TextInput, SimpleForm } from 'react-admin';
+import { Edit, SimpleForm,TextInput } from 'react-admin';
+
 import validateCustomer from './validateCustomer';
 
 const CustomerEdit = props => (

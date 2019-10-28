@@ -1,18 +1,17 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import {
+    blue,
+    brown,
+    cyan,
     deepOrange,
     deepPurple,
-    pink,
-    red,
     green,
-    blue,
-    cyan,
-    brown,
     orange,
-    purple
-} from '@material-ui/core/colors';
+    pink,
+    purple,
+    red} from '@material-ui/core/colors';
+import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 const styles = {
     card: {

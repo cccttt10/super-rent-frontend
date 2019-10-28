@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-    List,
+    BooleanField,
     Datagrid,
-    TextField,
+    List,
     ReferenceField,
-    BooleanField
-} from 'react-admin';
+    TextField} from 'react-admin';
+
 import CustomDateField from '../../reusables/CustomDateField';
 import CreateReturnButton from './CreateReturnButton';
 import RentShow from './RentShow';

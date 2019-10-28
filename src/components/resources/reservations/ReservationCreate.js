@@ -1,13 +1,13 @@
+import * as moment from 'moment';
 import React from 'react';
 import {
-    SelectInput,
-    ReferenceInput,
     AutocompleteInput,
-    SimpleForm,
-    Create
-} from 'react-admin';
+    Create,
+    ReferenceInput,
+    SelectInput,
+    SimpleForm} from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
-import * as moment from 'moment';
+
 import validateReservation from './validateReservation';
 
 const ReservationCreate = props => (

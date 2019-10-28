@@ -1,11 +1,11 @@
 import React from 'react';
 import {
     Edit,
-    TextInput,
-    SelectInput,
     RadioButtonGroupInput,
-    SimpleForm
-} from 'react-admin';
+    SelectInput,
+    SimpleForm,
+    TextInput} from 'react-admin';
+
 import validateVehicle from './validateVehicle';
 
 const VehicleEdit = props => (

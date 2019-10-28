@@ -1,9 +1,10 @@
 import React from 'react';
 import { List } from 'react-admin';
+
 import rowStyle from './rowStyle';
+import TabbedDataGrid from './TabbedDataGrid';
 import VehicleFilter from './VehicleFilter';
 import VehicleShow from './VehicleShow';
-import TabbedDataGrid from './TabbedDataGrid';
 
 const VehicleList = props => (
     <List {...props} filters={<VehicleFilter />}>

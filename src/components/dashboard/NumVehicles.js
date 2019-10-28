@@ -1,9 +1,9 @@
-import React from 'react';
-import compose from 'recompose/compose';
 import Card from '@material-ui/core/Card';
-import VehicleIcon from '@material-ui/icons/DirectionsCar';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import VehicleIcon from '@material-ui/icons/DirectionsCar';
+import React from 'react';
+import compose from 'recompose/compose';
 
 import CardIcon from '../reusables/CardIcon';
 

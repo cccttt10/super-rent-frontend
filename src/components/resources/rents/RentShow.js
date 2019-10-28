@@ -1,12 +1,11 @@
+import CardActions from '@material-ui/core/CardActions';
 import React from 'react';
 import {
-    TextField,
-    ReferenceField,
     BooleanField,
+    ReferenceField,
+    Show,
     SimpleShowLayout,
-    Show
-} from 'react-admin';
-import CardActions from '@material-ui/core/CardActions';
+    TextField} from 'react-admin';
 import { DeleteButton, EditButton } from 'react-admin';
 
 import CustomDateField from '../../reusables/CustomDateField';

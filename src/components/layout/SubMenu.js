@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
-import compose from 'recompose/compose';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from '@material-ui/core/Collapse';
+import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import Collapse from '@material-ui/core/Collapse';
 import { withStyles } from '@material-ui/core/styles';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import React, { Fragment } from 'react';
+import compose from 'recompose/compose';
 
 const styles = {
     listItem: {

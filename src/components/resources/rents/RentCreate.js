@@ -1,6 +1,7 @@
 import React from 'react';
-import { ReferenceInput, AutocompleteInput, SimpleForm, Create } from 'react-admin';
+import { AutocompleteInput, Create,ReferenceInput, SimpleForm } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+
 import validateRent from './validateRent';
 
 const RentCreate = props => (

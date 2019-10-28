@@ -1,14 +1,14 @@
+import CardActions from '@material-ui/core/CardActions';
 import React from 'react';
 import {
-    TextField,
     NumberField,
-    RichTextField,
     ReferenceField,
+    RichTextField,
+    Show,
     SimpleShowLayout,
-    Show
-} from 'react-admin';
-import CardActions from '@material-ui/core/CardActions';
+    TextField} from 'react-admin';
 import { DeleteButton } from 'react-admin';
+
 import CustomDateField from '../../reusables/CustomDateField';
 
 const ReturnShow = props => (

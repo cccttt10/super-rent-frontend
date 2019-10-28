@@ -1,8 +1,9 @@
-import CustomerList from './CustomerList';
-import CustomerEdit from './CustomerEdit';
-import CustomerCreate from './CustomerCreate';
-import CustomerShow from './CustomerShow';
 import CustomerIcon from '@material-ui/icons/Group';
+
+import CustomerCreate from './CustomerCreate';
+import CustomerEdit from './CustomerEdit';
+import CustomerList from './CustomerList';
+import CustomerShow from './CustomerShow';
 
 export default {
     list: CustomerList,

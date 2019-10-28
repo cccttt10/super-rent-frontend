@@ -4,6 +4,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended'
     ],
+    'plugins': [ 'simple-import-sort' ],
     'env': {
         'node': true,
         'es6': true
@@ -24,6 +25,9 @@ module.exports = {
         // }
     ],
     'rules': {
+        'simple-import-sort/sort': 'error',
+        'sort-imports': 'off',
+        'import/order': 'off',
         'react/prop-types': 'off',
         'no-var': 'error',
         'require-await': 'error',

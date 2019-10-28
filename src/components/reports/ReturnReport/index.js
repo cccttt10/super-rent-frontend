@@ -1,13 +1,14 @@
+import * as axios from 'axios';
 import React, { Component } from 'react';
+import { Title } from 'react-admin';
+import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import uuid from 'uuid/v4';
-import { connect } from 'react-redux';
-import ReturnReportPerBranch from './ReturnReportPerBranch';
-import * as axios from 'axios';
-import { Title } from 'react-admin';
-import colStyles from '../colStyles';
-import BranchFilter from '../BranchFilter';
+
 import Loader from '../../reusables/Loader';
+import BranchFilter from '../BranchFilter';
+import colStyles from '../colStyles';
+import ReturnReportPerBranch from './ReturnReportPerBranch';
 
 class ReturnReport extends Component {
     constructor(props) {

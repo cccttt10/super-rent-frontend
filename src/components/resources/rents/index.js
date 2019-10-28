@@ -1,8 +1,9 @@
-import RentList from './RentList';
-import RentEdit from './RentEdit';
-import RentCreate from './RentCreate';
-import RentShow from './RentShow';
 import RentIcon from '@material-ui/icons/ShoppingCart';
+
+import RentCreate from './RentCreate';
+import RentEdit from './RentEdit';
+import RentList from './RentList';
+import RentShow from './RentShow';
 
 export default {
     list: RentList,

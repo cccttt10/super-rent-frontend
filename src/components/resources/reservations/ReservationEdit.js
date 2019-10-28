@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-    Edit,
-    DisabledInput,
-    SelectInput,
-    ReferenceInput,
     AutocompleteInput,
+    DisabledInput,
+    Edit,
+    ReferenceInput,
+    SelectInput,
     SimpleForm
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+
 import validateReservation from './validateReservation';
 
 const ReservationEdit = props => (

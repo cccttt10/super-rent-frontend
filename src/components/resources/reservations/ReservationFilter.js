@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectInput, ReferenceInput, AutocompleteInput, Filter } from 'react-admin';
+import { AutocompleteInput, Filter,ReferenceInput, SelectInput } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
 const ReservationFilter = props => (

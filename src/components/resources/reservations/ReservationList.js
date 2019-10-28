@@ -1,7 +1,8 @@
 import React from 'react';
-import { List, Datagrid, TextField, ReferenceField, EditButton } from 'react-admin';
-import ReservationFilter from './ReservationFilter';
+import { Datagrid, EditButton,List, ReferenceField, TextField } from 'react-admin';
+
 import CustomDateField from '../../reusables/CustomDateField';
+import ReservationFilter from './ReservationFilter';
 
 const ReservationList = props => (
     <List {...props} filters={<ReservationFilter />}>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Show, TextField, SimpleShowLayout } from 'react-admin';
 import CardActions from '@material-ui/core/CardActions';
+import React from 'react';
+import { Show, SimpleShowLayout,TextField } from 'react-admin';
 import { DeleteButton, EditButton } from 'react-admin';
 
 const CustomerShow = props => (

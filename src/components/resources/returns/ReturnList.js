@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-    List,
     Datagrid,
-    TextField,
+    List,
     NumberField,
     ReferenceField,
-    ShowButton
-} from 'react-admin';
+    ShowButton,
+    TextField} from 'react-admin';
+
 import CustomDateField from '../../reusables/CustomDateField';
 
 const ReturnList = props => (

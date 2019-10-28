@@ -1,9 +1,9 @@
-import React from 'react';
-import compose from 'recompose/compose';
 import Card from '@material-ui/core/Card';
-import CustomerIcon from '@material-ui/icons/People';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import CustomerIcon from '@material-ui/icons/People';
+import React from 'react';
+import compose from 'recompose/compose';
 
 import CardIcon from '../reusables/CardIcon';
 

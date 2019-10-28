@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-    Edit,
-    DisabledInput,
-    ReferenceInput,
     AutocompleteInput,
+    DisabledInput,
+    Edit,
+    ReferenceInput,
     SimpleForm
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
+
 import validateRent from './validateRent';
 
 const RentEdit = props => (

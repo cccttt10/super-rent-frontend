@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import compose from 'recompose/compose';
-import { connect } from 'react-redux';
 import * as axios from 'axios';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import compose from 'recompose/compose';
+
+import Loader from '../reusables/Loader';
+import NewRents from './NewRents';
 import NumCustomers from './NumCustomers';
 import NumVehicles from './NumVehicles';
-import NewRents from './NewRents';
-import Loader from '../reusables/Loader';
 
 const styles = {
     flex: { display: 'flex' },

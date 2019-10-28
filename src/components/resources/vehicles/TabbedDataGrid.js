@@ -1,11 +1,12 @@
+import Divider from '@material-ui/core/Divider';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 import React, { Fragment } from 'react';
 import { Datagrid, TextField } from 'react-admin';
-import withStyles from '@material-ui/core/styles/withStyles';
-import Divider from '@material-ui/core/Divider';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import CreateReservationButton from './CreateReservationButton';
+
 import ColoredStatusField from './ColoredStatusField';
+import CreateReservationButton from './CreateReservationButton';
 
 const datagridStyles = {
     total: { fontWeight: 'bold' }

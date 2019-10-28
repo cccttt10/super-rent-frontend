@@ -1,10 +1,10 @@
-import React from 'react';
-import { TextField } from 'react-admin';
-import classnames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import orange from '@material-ui/core/colors/orange';
 import red from '@material-ui/core/colors/red';
+import { withStyles } from '@material-ui/core/styles';
+import classnames from 'classnames';
+import React from 'react';
+import { TextField } from 'react-admin';
 
 const coloredStyles = {
     available: { color: green[500] },

@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import compose from 'recompose/compose';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 import { DashboardMenuItem, MenuItemLink } from 'react-admin';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import compose from 'recompose/compose';
 
 import customers from '../resources/customers';
-import vehicles from '../resources/vehicles';
-import reservations from '../resources/reservations';
 import rents from '../resources/rents';
+import reservations from '../resources/reservations';
 import returns from '../resources/returns';
-
+import vehicles from '../resources/vehicles';
 import SubMenu from './SubMenu';
 
 class Menu extends Component {
