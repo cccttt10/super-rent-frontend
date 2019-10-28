@@ -7,5 +7,5 @@ export default {
     list: ReturnList,
     show: ReturnShow,
     create: ReturnCreate,
-    icon: ReturnIcon,
+    icon: ReturnIcon
 };

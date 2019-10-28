@@ -16,11 +16,7 @@ const VehicleFilter = props => (
                 { id: 'Truck', name: 'Truck' }
             ]}
         />
-        <TextInput
-            label="City"
-            source="city"
-            defaultValue="Vancouver"
-        />
+        <TextInput label="City" source="city" defaultValue="Vancouver" />
         <DateInput
             source="fromDate"
             label="Available From"

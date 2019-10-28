@@ -28,16 +28,8 @@ const cardActionStyle = {
 
 const VehicleShowActions = ({ basePath, data, resource }) => (
     <CardActions style={cardActionStyle}>
-        <DeleteButton
-            basePath={basePath}
-            record={data}
-            resource="vehicles"
-        />
-        <EditButton
-            basePath={basePath}
-            record={data}
-            resource="vehicles"
-        />
+        <DeleteButton basePath={basePath} record={data} resource="vehicles" />
+        <EditButton basePath={basePath} record={data} resource="vehicles" />
     </CardActions>
 );
 

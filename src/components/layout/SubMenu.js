@@ -19,13 +19,11 @@ const styles = {
     },
     sidebarIsOpen: {
         paddingLeft: 25,
-        transition:
-            'padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms'
+        transition: 'padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms'
     },
     sidebarIsClosed: {
         paddingLeft: 0,
-        transition:
-            'padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms'
+        transition: 'padding-left 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms'
     }
 };
 
@@ -39,15 +37,8 @@ const SubMenu = ({
     children
 }) => (
     <Fragment>
-        <ListItem
-            dense
-            button
-            onClick={handleToggle}
-            className={classes.listItem}
-        >
-            <ListItemIcon>
-                {isOpen ? <ExpandMore /> : icon}
-            </ListItemIcon>
+        <ListItem dense button onClick={handleToggle} className={classes.listItem}>
+            <ListItemIcon>{isOpen ? <ExpandMore /> : icon}</ListItemIcon>
             <ListItemText
                 inset
                 primary={isOpen ? name : ''}
@@ -61,11 +52,7 @@ const SubMenu = ({
                 component="div"
                 disablePadding
                 className={
-                    sidebarIsOpen ? (
-                        classes.sidebarIsOpen
-                    ) : (
-                        classes.sidebarIsClosed
-                    )
+                    sidebarIsOpen ? classes.sidebarIsOpen : classes.sidebarIsClosed
                 }
             >
                 {children}

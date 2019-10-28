@@ -25,10 +25,7 @@ function Logo() {
                         order="9,9"
                         result="extrude"
                     />
-                    <feFlood
-                        floodColor="#900"
-                        result="flood-extrude"
-                    />
+                    <feFlood floodColor="#900" result="flood-extrude" />
                     <feComposite
                         in="flood-extrude"
                         in2="extrude"
@@ -58,12 +55,7 @@ function Logo() {
                         order="5,5"
                         result="inner-shadow"
                     />
-                    <feOffset
-                        dx="1"
-                        dy="1"
-                        in="inner-shadow"
-                        result="offset"
-                    />
+                    <feOffset dx="1" dy="1" in="inner-shadow" result="offset" />
                     <feComposite
                         in="offset"
                         in2="SourceAlpha"
@@ -108,16 +100,8 @@ function Logo() {
                         order="9,9"
                         result="shadow"
                     />
-                    <feOffset
-                        dx="15"
-                        dy="15"
-                        in="shadow"
-                        result="shadow-offset"
-                    />
-                    <feFlood
-                        floodColor="#444"
-                        result="flood-shadow"
-                    />
+                    <feOffset dx="15" dy="15" in="shadow" result="shadow-offset" />
+                    <feFlood floodColor="#444" result="flood-shadow" />
                     <feComposite
                         in="flood-shadow"
                         in2="shadow-offset"
@@ -130,10 +114,7 @@ function Logo() {
                     </feMerge>
                 </filter>
             </defs>
-            <g
-                filter="url(#editing-vintage)"
-                transform="translate(-9 -9)"
-            >
+            <g filter="url(#editing-vintage)" transform="translate(-9 -9)">
                 <path
                     fill="red"
                     stroke="#0f0"

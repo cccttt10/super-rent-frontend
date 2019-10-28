@@ -43,14 +43,8 @@ const RentShow = props => (
                 <TextField source="confNum" />
             </ReferenceField>
 
-            <CustomDateField
-                source="fromDate"
-                label="From"
-            />
-            <CustomDateField
-                source="toDate"
-                label="To"
-            />
+            <CustomDateField source="fromDate" label="From" />
+            <CustomDateField source="toDate" label="To" />
             <BooleanField source="isReturned" label="Returned?" />
         </SimpleShowLayout>
     </Show>
@@ -66,23 +60,15 @@ const RentShowActions = ({ basePath, data, resource }) => {
     if (!data.isReturned)
         return (
             <CardActions style={cardActionStyle}>
-                <DeleteButton
-                    basePath={basePath}
-                    record={data}
-                    resource="rents"
-                />
-                <EditButton
-                    basePath={basePath}
-                    record={data}
-                    resource="rents"
-                />
+                <DeleteButton basePath={basePath} record={data} resource="rents" />
+                <EditButton basePath={basePath} record={data} resource="rents" />
             </CardActions>
         );
     else
         return (
             <p style={{ color: 'red' }}>
-                This rent was already returned, you can't delete or
-                edit this rent anymore
+                This rent was already returned, you cannot delete or edit this rent
+                anymore
             </p>
         );
 };

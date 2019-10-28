@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    SelectInput,
-    ReferenceInput,
-    AutocompleteInput,
-    Filter
-} from 'react-admin';
+import { SelectInput, ReferenceInput, AutocompleteInput, Filter } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 
 const ReservationFilter = props => (
@@ -40,8 +35,7 @@ const ReservationFilter = props => (
         >
             <AutocompleteInput
                 source="driversLicence"
-                optionText={choice =>
-                    `${choice.driversLicence} (${choice.name})`}
+                optionText={choice => `${choice.driversLicence} (${choice.name})`}
             />
         </ReferenceInput>
         <DateInput
@@ -49,11 +43,7 @@ const ReservationFilter = props => (
             label="From"
             options={{ format: 'MM-dd-YYYY' }}
         />
-        <DateInput
-            source="toDate"
-            label="To"
-            options={{ format: 'MM-dd-YYYY' }}
-        />
+        <DateInput source="toDate" label="To" options={{ format: 'MM-dd-YYYY' }} />
     </Filter>
 );
 

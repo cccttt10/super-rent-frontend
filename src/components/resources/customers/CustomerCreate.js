@@ -5,10 +5,7 @@ import validateCustomer from './validateCustomer';
 const CustomerCreate = props => (
     <Create {...props}>
         <SimpleForm validate={validateCustomer}>
-            <TextInput
-                source="driversLicence"
-                label="Driver's Licence"
-            />
+            <TextInput source="driversLicence" label="Driver's Licence" />
             <TextInput source="phone" />
             <TextInput source="name" />
         </SimpleForm>

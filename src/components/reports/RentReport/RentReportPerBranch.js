@@ -40,35 +40,21 @@ const styles = theme => ({
     }
 });
 
-const RentReportPerBranch = ({
-    dailyRentsPerBranch,
-    dailyRents = [],
-    num,
-    classes
-}) => (
+const RentReportPerBranch = ({ dailyRentsPerBranch, classes }) => (
     <div className={classes.main}>
         <LetterAvatar
-            letters={dailyRentsPerBranch.branch.city
-                .split('')
-                .slice(0, 2)}
+            letters={dailyRentsPerBranch.branch.city.split('').slice(0, 2)}
         />
         <Card className={classes.card}>
             <Typography className={classes.title} color="textPrimary">
                 {dailyRentsPerBranch.branch.city}
             </Typography>
 
-            <Typography
-                className={classes.title}
-                color="textSecondary"
-            >
+            <Typography className={classes.title} color="textSecondary">
                 {dailyRentsPerBranch.branch.location}
             </Typography>
 
-            <Typography
-                variant="headline"
-                component="h2"
-                className={classes.value}
-            >
+            <Typography variant="headline" component="h2" className={classes.value}>
                 {dailyRentsPerBranch.dailyRents.length}
             </Typography>
             <Divider />

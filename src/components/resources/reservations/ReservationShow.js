@@ -1,22 +1,14 @@
 import React from 'react';
-import {
-    Show,
-    TextField,
-    ReferenceField,
-    SimpleShowLayout
-} from 'react-admin';
+import { Show, TextField, ReferenceField, SimpleShowLayout } from 'react-admin';
 import CardActions from '@material-ui/core/CardActions';
 import { DeleteButton, EditButton } from 'react-admin';
-import CustomDateField from '../../reusables/CustomDateField'
+import CustomDateField from '../../reusables/CustomDateField';
 
 const ReservationEdit = props => (
     <Show actions={<ReservationShowActions />} {...props}>
         <SimpleShowLayout>
             <TextField source="confNum" label="Confirmation #" />
-            <TextField
-                source="vehicleTypeName"
-                label="Vehicle Type"
-            />
+            <TextField source="vehicleTypeName" label="Vehicle Type" />
             <ReferenceField
                 label="Customer"
                 source="driversLicence"
@@ -40,16 +32,8 @@ const cardActionStyle = {
 
 const ReservationShowActions = ({ basePath, data, resource }) => (
     <CardActions style={cardActionStyle}>
-        <EditButton
-            basePath={basePath}
-            record={data}
-            resource="reservations"
-        />
-        <DeleteButton
-            basePath={basePath}
-            record={data}
-            resource="reservations"
-        />
+        <EditButton basePath={basePath} record={data} resource="reservations" />
+        <DeleteButton basePath={basePath} record={data} resource="reservations" />
     </CardActions>
 );
 

@@ -25,10 +25,7 @@ const NumCustomers = ({ value, classes }) => (
     <div className={classes.main}>
         <CardIcon Icon={CustomerIcon} bgColor="#ff9800" />
         <Card className={classes.card}>
-            <Typography
-                className={classes.title}
-                color="textSecondary"
-            >
+            <Typography className={classes.title} color="textSecondary">
                 Users
             </Typography>
             <Typography variant="headline" component="h2">

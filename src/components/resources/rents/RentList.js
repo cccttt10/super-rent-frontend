@@ -42,14 +42,8 @@ const RentList = props => (
                 <TextField source="confNum" />
             </ReferenceField>
 
-            <CustomDateField
-                source="fromDate"
-                label="From"
-            />
-            <CustomDateField
-                source="toDate"
-                label="To"
-            />
+            <CustomDateField source="fromDate" label="From" />
+            <CustomDateField source="toDate" label="To" />
             <BooleanField source="isReturned" label="Returned?" />
             <CreateReturnButton />
         </Datagrid>

@@ -23,10 +23,7 @@ const ReturnShow = props => (
                 <TextField source="rentId" />
             </ReferenceField>
 
-            <CustomDateField
-                source="date"
-                label="Return Date"
-            />
+            <CustomDateField source="date" label="Return Date" />
 
             <NumberField source="price" label="Price $" />
 
@@ -43,11 +40,7 @@ const cardActionStyle = {
 
 const ReturnShowActions = ({ basePath, data, resource }) => (
     <CardActions style={cardActionStyle}>
-        <DeleteButton
-            basePath={basePath}
-            record={data}
-            resource="returns"
-        />
+        <DeleteButton basePath={basePath} record={data} resource="returns" />
     </CardActions>
 );
 

@@ -12,16 +12,12 @@ const coloredStyles = {
     maintenance: { color: red[500] }
 };
 
-const ColoredStatusField = withStyles(
-    coloredStyles
-)(({ classes, ...props }) => (
+const ColoredStatusField = withStyles(coloredStyles)(({ classes, ...props }) => (
     <TextField
         className={classnames({
-            [classes.available]:
-                props.record[props.source] === 'available',
+            [classes.available]: props.record[props.source] === 'available',
             [classes.rented]: props.record[props.source] === 'rented',
-            [classes.maintenance]:
-                props.record[props.source] === 'maintenance'
+            [classes.maintenance]: props.record[props.source] === 'maintenance'
         })}
         {...props}
     />

@@ -40,43 +40,27 @@ const styles = theme => ({
     }
 });
 
-const ReturnReportPerBranch = ({
-    dailyReturnsPerBranch,
-    dailyReturns = [],
-    num,
-    classes
-}) => (
+const ReturnReportPerBranch = ({ dailyReturnsPerBranch, classes }) => (
     <div className={classes.main}>
         <LetterAvatar
-            letters={dailyReturnsPerBranch.branch.city
-                .split('')
-                .slice(0, 2)}
+            letters={dailyReturnsPerBranch.branch.city.split('').slice(0, 2)}
         />
         <Card className={classes.card}>
             <Typography className={classes.title} color="textPrimary">
                 {dailyReturnsPerBranch.branch.city}
             </Typography>
 
-            <Typography
-                className={classes.title}
-                color="textSecondary"
-            >
+            <Typography className={classes.title} color="textSecondary">
                 {dailyReturnsPerBranch.branch.location}
             </Typography>
 
-            <Typography
-                className={classes.title}
-                color="textSecondary"
-            >
+            <Typography className={classes.title} color="textSecondary">
                 {dailyReturnsPerBranch.dailyReturns.length} Record(s)
             </Typography>
 
-            <Typography
-                variant="headline"
-                component="h2"
-                className={classes.value}
-            >
-                Revenue: ${dailyReturnsPerBranch.dailyReturns.reduce(
+            <Typography variant="headline" component="h2" className={classes.value}>
+                Revenue: $
+                {dailyReturnsPerBranch.dailyReturns.reduce(
                     (acc, cur) => acc + cur.price,
                     0
                 )}

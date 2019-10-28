@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StyledButton from '../../layout/StyledButton';
+import StyledButton from '../../reusables/StyledButton';
 
 const CreateReturnButton = ({ record }) => {
     if (!record.isReturned) {
@@ -15,8 +15,7 @@ const CreateReturnButton = ({ record }) => {
                 Return
             </StyledButton>
         );
-    }
-    else return <span />;
+    } else return <span />;
 };
 
 export default CreateReturnButton;

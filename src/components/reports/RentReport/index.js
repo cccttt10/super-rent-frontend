@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
+import uuid from 'uuid/v4';
 import { connect } from 'react-redux';
 import RentReportPerBranch from './RentReportPerBranch';
 import * as axios from 'axios';
@@ -41,26 +42,20 @@ class RentReport extends Component {
             `${process.env.REACT_APP_API_URL}/reports/rents`
         );
         const dailyRents = response.data;
-        console.log(dailyRents);
+        // console.log(dailyRents);
         const branches = dailyRents.map(entry => entry.branch);
-        console.log(branches);
+        // console.log(branches);
         this.setState({ dailyRents, branches });
     }
 
     render() {
-        let {
-            dailyRents,
-            branches,
-            isLoading,
-            selectedBranch
-        } = this.state;
+        let { dailyRents, branches, isLoading, selectedBranch } = this.state;
         if (dailyRents === undefined) dailyRents = [];
         else if (selectedBranch)
             dailyRents = dailyRents.filter(
                 dailyRent =>
                     dailyRent.branch.city === selectedBranch.city &&
-                    dailyRent.branch.location ===
-                        selectedBranch.location
+                    dailyRent.branch.location === selectedBranch.location
             );
         if (branches === undefined) branches = [];
         if (isLoading)
@@ -80,10 +75,8 @@ class RentReport extends Component {
                 <div style={colStyles.flex}>
                     <div style={colStyles.leftCol}>
                         {dailyRents.map(record => (
-                            <div style={colStyles.singleCol}>
-                                <RentReportPerBranch
-                                    dailyRentsPerBranch={record}
-                                />
+                            <div key={uuid()} style={colStyles.singleCol}>
+                                <RentReportPerBranch dailyRentsPerBranch={record} />
                             </div>
                         ))}
                     </div>

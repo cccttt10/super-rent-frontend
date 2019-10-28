@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import { withRouter } from 'react-router-dom';
 import { DashboardMenuItem, MenuItemLink } from 'react-admin';
-import { stringify } from 'query-string';
 
 import customers from '../resources/customers';
 import vehicles from '../resources/vehicles';
@@ -16,22 +14,24 @@ import returns from '../resources/returns';
 import SubMenu from './SubMenu';
 
 class Menu extends Component {
-    state = {
-        menuRents: false,
-        menuReturns: false
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuRents: false,
+            menuReturns: false
+        };
+        this.propTypes = {
+            onMenuClick: PropTypes.func
+        };
+        this.handleToggle = this.handleToggle.bind(this);
+    }
 
-    static propTypes = {
-        onMenuClick: PropTypes.func
-    };
-
-    handleToggle = menu => {
+    handleToggle(menu) {
         this.setState(state => ({ [menu]: !state[menu] }));
-    };
+    }
 
     render() {
         let { onMenuClick, open } = this.props;
-        console.log(moment().format('YYYY-MM-DD'));
         return (
             <div>
                 <DashboardMenuItem onClick={onMenuClick} />
@@ -58,8 +58,7 @@ class Menu extends Component {
                 />
 
                 <SubMenu
-                    handleToggle={() =>
-                        this.handleToggle('menuRents')}
+                    handleToggle={() => this.handleToggle('menuRents')}
                     isOpen={this.state.menuRents}
                     sidebarIsOpen={open}
                     name="Rents"
@@ -80,8 +79,7 @@ class Menu extends Component {
                 </SubMenu>
 
                 <SubMenu
-                    handleToggle={() =>
-                        this.handleToggle('menuReturns')}
+                    handleToggle={() => this.handleToggle('menuReturns')}
                     isOpen={this.state.menuReturns}
                     sidebarIsOpen={open}
                     name="Returns"
@@ -109,6 +107,12 @@ const mapStateToProps = state => ({
     open: state.admin.ui.sidebarOpen
 });
 
-const enhance = compose(withRouter, connect(mapStateToProps, {}));
+const enhance = compose(
+    withRouter,
+    connect(
+        mapStateToProps,
+        {}
+    )
+);
 
 export default enhance(Menu);

@@ -6,10 +6,7 @@ import { DeleteButton, EditButton } from 'react-admin';
 const CustomerShow = props => (
     <Show actions={<CustomerShowActions />} {...props}>
         <SimpleShowLayout>
-            <TextField
-                source="driversLicence"
-                label="Driver's Licence"
-            />
+            <TextField source="driversLicence" label="Driver's Licence" />
             <TextField source="phone" />
             <TextField source="name" />
         </SimpleShowLayout>
@@ -24,16 +21,8 @@ const cardActionStyle = {
 
 const CustomerShowActions = ({ basePath, data, resource }) => (
     <CardActions style={cardActionStyle}>
-        <EditButton
-            basePath={basePath}
-            record={data}
-            resource="customers"
-        />
-        <DeleteButton
-            basePath={basePath}
-            record={data}
-            resource="customers"
-        />
+        <EditButton basePath={basePath} record={data} resource="customers" />
+        <DeleteButton basePath={basePath} record={data} resource="customers" />
     </CardActions>
 );
 

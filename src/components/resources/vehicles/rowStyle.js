@@ -8,21 +8,21 @@ const rowStyle = (record, index, defaultStyle = {}) => {
             ...defaultStyle,
             borderLeftColor: green[500],
             borderLeftWidth: 15,
-            borderLeftStyle: 'solid',
+            borderLeftStyle: 'solid'
         };
     if (record.status === 'rented')
         return {
             ...defaultStyle,
             borderLeftColor: orange[500],
             borderLeftWidth: 15,
-            borderLeftStyle: 'solid',
+            borderLeftStyle: 'solid'
         };
     if (record.status === 'maintenance')
         return {
             ...defaultStyle,
             borderLeftColor: red[500],
             borderLeftWidth: 15,
-            borderLeftStyle: 'solid',
+            borderLeftStyle: 'solid'
         };
     return defaultStyle;
 };

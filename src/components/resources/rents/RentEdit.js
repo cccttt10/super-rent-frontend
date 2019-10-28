@@ -23,7 +23,8 @@ const RentEdit = props => (
                 <AutocompleteInput
                     source="vehicleLicence"
                     optionText={choice =>
-                        `${choice.vehicleLicence} (${choice.make} ${choice.model})`}
+                        `${choice.vehicleLicence} (${choice.make} ${choice.model})`
+                    }
                 />
             </ReferenceInput>
 
@@ -36,7 +37,8 @@ const RentEdit = props => (
                 <AutocompleteInput
                     source="driversLicence"
                     optionText={choice =>
-                        `${choice.driversLicence} (${choice.name})`}
+                        `${choice.driversLicence} (${choice.name})`
+                    }
                 />
             </ReferenceInput>
 

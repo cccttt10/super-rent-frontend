@@ -3,6 +3,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import uuid from 'uuid/v4';
 
 class BranchFilter extends Component {
     constructor(props) {
@@ -32,18 +33,16 @@ class BranchFilter extends Component {
                 <InputLabel>Branch</InputLabel>
                 <Select
                     value={
-                        this.selectedBranch.city === '' ? (
-                            'All'
-                        ) : (
-                            `${this.selectedBranch.city}-${this
-                                .selectedBranch.location}`
-                        )
+                        this.selectedBranch.city === ''
+                            ? 'All'
+                            : `${this.selectedBranch.city}-${this.selectedBranch.location}`
                     }
                     onChange={this.handleChange}
                 >
                     <MenuItem value="All">All</MenuItem>
                     {branches.map(branch => (
                         <MenuItem
+                            key={uuid()}
                             value={`${branch.city}-${branch.location}`}
                         >{`${branch.city} - ${branch.location}`}</MenuItem>
                     ))}

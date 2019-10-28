@@ -4,16 +4,14 @@ const validateRent = values => {
     const errors = {};
 
     if (!values.vehicleLicence)
-        errors.vehicleLicence = [ 'You must specify a vehicle' ];
+        errors.vehicleLicence = ['You must specify a vehicle'];
 
     if (!values.driversLicence)
-        errors.driversLicence = [ 'You must specify a customer' ];
+        errors.driversLicence = ['You must specify a customer'];
 
-    if (!values.fromDate)
-        errors.fromDate = [ 'You must specify a start date' ];
+    if (!values.fromDate) errors.fromDate = ['You must specify a start date'];
 
-    if (!values.toDate)
-        errors.toDate = [ 'You must specify an end date' ];
+    if (!values.toDate) errors.toDate = ['You must specify an end date'];
 
     if (!moment(values.toDate).isSameOrAfter(values.fromDate))
         errors.toDate = [
@@ -21,13 +19,13 @@ const validateRent = values => {
         ];
 
     if (moment(values.fromDate).isBefore(moment().startOf('day')))
-        errors.fromDate = [ 'Start date cannot be in the past' ];
+        errors.fromDate = ['Start date cannot be in the past'];
 
     if (moment(values.fromDate).isAfter('2020-12-01'))
-        errors.fromDate = [ 'Start date cannot be after 2020-12-01' ];
+        errors.fromDate = ['Start date cannot be after 2020-12-01'];
 
     if (moment(values.toDate).isAfter('2020-12-01'))
-        errors.toDate = [ 'End date cannot be after 2020-12-01' ];
+        errors.toDate = ['End date cannot be after 2020-12-01'];
 
     return errors;
 };

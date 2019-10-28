@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-    ReferenceInput,
-    AutocompleteInput,
-    SimpleForm,
-    Create
-} from 'react-admin';
+import { ReferenceInput, AutocompleteInput, SimpleForm, Create } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
-import * as moment from 'moment';
 import validateReturn from './validateReturn';
 
 const ReturnCreate = props => (

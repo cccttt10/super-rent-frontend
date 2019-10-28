@@ -47,12 +47,12 @@ class Dashboard extends Component {
             `${process.env.REACT_APP_API_URL}/reports/rents`
         );
         const data = responseRents.data;
-        console.log(data);
+        // console.log(data);
         let newRents = [];
         for (const e of data) {
             newRents = newRents.concat(e.dailyRents);
         }
-        console.log(newRents);
+        // console.log(newRents);
 
         const responseCustomers = await axios.get(
             `${process.env.REACT_APP_API_URL}/customers`
@@ -90,10 +90,7 @@ class Dashboard extends Component {
 
                 <div style={styles.rightCol}>
                     <div style={styles.flex}>
-                        <NewRents
-                            newRents={newRents}
-                            num={newRents.length}
-                        />
+                        <NewRents newRents={newRents} num={newRents.length} />
                     </div>
                 </div>
             </div>

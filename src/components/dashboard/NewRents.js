@@ -50,17 +50,10 @@ const NewRents = ({ newRents = [], num, classes }) => (
     <div className={classes.main}>
         <CardIcon Icon={RentIcon} bgColor="#f44336" />
         <Card className={classes.card}>
-            <Typography
-                className={classes.title}
-                color="textSecondary"
-            >
+            <Typography className={classes.title} color="textSecondary">
                 New Rents
             </Typography>
-            <Typography
-                variant="headline"
-                component="h2"
-                className={classes.value}
-            >
+            <Typography variant="headline" component="h2" className={classes.value}>
                 <Link to={location} className={classes.titleLink}>
                     {num}
                 </Link>
@@ -73,7 +66,6 @@ const NewRents = ({ newRents = [], num, classes }) => (
                         button
                         component={Link}
                         to={`/rents/${record.rentId}/edit`}
-                        
                     >
                         <ListItemText
                             primary={`ID: ${record.rentId}`}

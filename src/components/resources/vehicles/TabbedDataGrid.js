@@ -12,19 +12,22 @@ const datagridStyles = {
 };
 
 class TabbedDatagrid extends React.Component {
+    constructor(props) {
+        super(props);
+        this.tabs = [
+            { id: 'all', name: 'all' },
+            { id: 'available', name: 'available' },
+            { id: 'rented', name: 'rented' },
+            { id: 'maintenance', name: 'maintenance' }
+        ];
+        this.state = { all: [], available: [], rented: [], maintenance: [] };
+        this.handleChange = this.handleChange.bind(this);
+    }
 
     componentDidMount() {
         const { filterValues, setFilters } = this.props;
         setFilters({ ...filterValues, status: 'all' });
     }
-    tabs = [
-        { id: 'all', name: 'all' },
-        { id: 'available', name: 'available' },
-        { id: 'rented', name: 'rented' },
-        { id: 'maintenance', name: 'maintenance' }
-    ];
-
-    state = { all: [], available: [], rented: [], maintenance: [] };
 
     static getDerivedStateFromProps(props, state) {
         if (props.ids !== state[props.filterValues.status]) {
@@ -36,13 +39,13 @@ class TabbedDatagrid extends React.Component {
         return null;
     }
 
-    handleChange = (event, value) => {
+    handleChange(event, value) {
         const { filterValues, setFilters } = this.props;
         setFilters({ ...filterValues, status: value });
-    };
+    }
 
     render() {
-        const { classes, filterValues, ...props } = this.props;
+        const { filterValues, ...props } = this.props;
         return (
             <Fragment>
                 <Tabs
@@ -53,11 +56,7 @@ class TabbedDatagrid extends React.Component {
                     onChange={this.handleChange}
                 >
                     {this.tabs.map(choice => (
-                        <Tab
-                            key={choice.id}
-                            label={choice.name}
-                            value={choice.id}
-                        />
+                        <Tab key={choice.id} label={choice.name} value={choice.id} />
                     ))}
                 </Tabs>
                 <Divider />
@@ -68,34 +67,19 @@ class TabbedDatagrid extends React.Component {
                             <TextField source="vehicleLicence" />
                             <TextField source="make" />
                             <ColoredStatusField source="status" />
-                            <TextField
-                                source="vehicleTypeName"
-                                label="Type"
-                            />
-                            <TextField
-                                source="dayRate"
-                                label="$/day"
-                            />
+                            <TextField source="vehicleTypeName" label="Type" />
+                            <TextField source="dayRate" label="$/day" />
                             <TextField source="city" />
                             <CreateReservationButton />
                         </Datagrid>
                     )}
                     {filterValues.status === 'available' && (
-                        <Datagrid
-                            {...props}
-                            ids={this.state.available}
-                        >
+                        <Datagrid {...props} ids={this.state.available}>
                             <TextField source="vehicleLicence" />
                             <TextField source="make" />
                             <ColoredStatusField source="status" />
-                            <TextField
-                                source="vehicleTypeName"
-                                label="Type"
-                            />
-                            <TextField
-                                source="dayRate"
-                                label="$/day"
-                            />
+                            <TextField source="vehicleTypeName" label="Type" />
+                            <TextField source="dayRate" label="$/day" />
                             <TextField source="city" />
                             <CreateReservationButton />
                         </Datagrid>
@@ -105,34 +89,19 @@ class TabbedDatagrid extends React.Component {
                             <TextField source="vehicleLicence" />
                             <TextField source="make" />
                             <ColoredStatusField source="status" />
-                            <TextField
-                                source="vehicleTypeName"
-                                label="Type"
-                            />
-                            <TextField
-                                source="dayRate"
-                                label="$/day"
-                            />
+                            <TextField source="vehicleTypeName" label="Type" />
+                            <TextField source="dayRate" label="$/day" />
                             <TextField source="city" />
                             <CreateReservationButton />
                         </Datagrid>
                     )}
                     {filterValues.status === 'maintenance' && (
-                        <Datagrid
-                            {...props}
-                            ids={this.state.maintenance}
-                        >
+                        <Datagrid {...props} ids={this.state.maintenance}>
                             <TextField source="vehicleLicence" />
                             <TextField source="make" />
                             <ColoredStatusField source="status" />
-                            <TextField
-                                source="vehicleTypeName"
-                                label="Type"
-                            />
-                            <TextField
-                                source="dayRate"
-                                label="$/day"
-                            />
+                            <TextField source="vehicleTypeName" label="Type" />
+                            <TextField source="dayRate" label="$/day" />
                             <TextField source="city" />
                             <CreateReservationButton />
                         </Datagrid>

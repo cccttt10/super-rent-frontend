@@ -1,0 +1,4 @@
+build/*
+public/*
+src/index.js
+src/App.js

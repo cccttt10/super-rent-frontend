@@ -25,11 +25,8 @@ const NumVehicles = ({ value, classes }) => (
     <div className={classes.main}>
         <CardIcon Icon={VehicleIcon} bgColor="#31708f" />
         <Card className={classes.card}>
-            <Typography
-                className={classes.title}
-                color="textSecondary"
-            >
-                Vehicles 
+            <Typography className={classes.title} color="textSecondary">
+                Vehicles
             </Typography>
             <Typography variant="headline" component="h2">
                 {value}

@@ -57,8 +57,7 @@ const LetterAvatar = ({ letters, classes }) => {
         brown[300],
         brown[400]
     ];
-    const randColor =
-        colors[Math.floor(Math.random() * colors.length)];
+    const randColor = colors[Math.floor(Math.random() * colors.length)];
 
     return (
         <Avatar

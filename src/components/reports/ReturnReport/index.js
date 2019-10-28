@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import compose from 'recompose/compose';
+import uuid from 'uuid/v4';
 import { connect } from 'react-redux';
 import ReturnReportPerBranch from './ReturnReportPerBranch';
 import * as axios from 'axios';
@@ -41,26 +42,20 @@ class ReturnReport extends Component {
             `${process.env.REACT_APP_API_URL}/reports/returns`
         );
         const dailyReturns = response.data;
-        console.log(dailyReturns);
+        // console.log(dailyReturns);
         const branches = dailyReturns.map(entry => entry.branch);
-        console.log(branches);
+        // console.log(branches);
         this.setState({ dailyReturns, branches });
     }
 
     render() {
-        let {
-            dailyReturns,
-            branches,
-            isLoading,
-            selectedBranch
-        } = this.state;
+        let { dailyReturns, branches, isLoading, selectedBranch } = this.state;
         if (dailyReturns === undefined) dailyReturns = [];
         else if (selectedBranch)
             dailyReturns = dailyReturns.filter(
                 dailyRent =>
                     dailyRent.branch.city === selectedBranch.city &&
-                    dailyRent.branch.location ===
-                        selectedBranch.location
+                    dailyRent.branch.location === selectedBranch.location
             );
         if (branches === undefined) branches = [];
         if (isLoading)
@@ -80,7 +75,7 @@ class ReturnReport extends Component {
                 <div style={colStyles.flex}>
                     <div style={colStyles.leftCol}>
                         {dailyReturns.map(record => (
-                            <div style={colStyles.singleCol}>
+                            <div key={uuid()} style={colStyles.singleCol}>
                                 <ReturnReportPerBranch
                                     dailyReturnsPerBranch={record}
                                 />

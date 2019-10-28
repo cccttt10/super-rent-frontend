@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-    ReferenceInput,
-    AutocompleteInput,
-    SimpleForm,
-    Create
-} from 'react-admin';
+import { ReferenceInput, AutocompleteInput, SimpleForm, Create } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
-import * as moment from 'moment';
 import validateRent from './validateRent';
 
 const RentCreate = props => (
@@ -21,7 +15,8 @@ const RentCreate = props => (
                 <AutocompleteInput
                     source="vehicleLicence"
                     optionText={choice =>
-                        `${choice.vehicleLicence} (${choice.make} ${choice.model})`}
+                        `${choice.vehicleLicence} (${choice.make} ${choice.model})`
+                    }
                 />
             </ReferenceInput>
 
@@ -34,7 +29,8 @@ const RentCreate = props => (
                 <AutocompleteInput
                     source="driversLicence"
                     optionText={choice =>
-                        `${choice.driversLicence} (${choice.name})`}
+                        `${choice.driversLicence} (${choice.name})`
+                    }
                 />
             </ReferenceInput>
 

@@ -8,7 +8,7 @@ import {
 } from 'react-admin';
 import { DateInput } from 'react-admin-date-inputs';
 import * as moment from 'moment';
-import validateReservation from './validateReservation'; 
+import validateReservation from './validateReservation';
 
 const ReservationCreate = props => (
     <Create {...props}>
@@ -34,11 +34,13 @@ const ReservationCreate = props => (
                 <AutocompleteInput
                     source="driversLicence"
                     optionText={choice =>
-                        `${choice.driversLicence} (${choice.name})`}
+                        `${choice.driversLicence} (${choice.name})`
+                    }
                 />
             </ReferenceInput>
 
-            <DateInput defaultValue={moment()}
+            <DateInput
+                defaultValue={moment()}
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
