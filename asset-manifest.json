@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/super-rent-frontend/static/css/main.34de6062.chunk.css",
-    "main.js": "/super-rent-frontend/static/js/main.7f8d91e0.chunk.js",
-    "main.js.map": "/super-rent-frontend/static/js/main.7f8d91e0.chunk.js.map",
+    "main.js": "/super-rent-frontend/static/js/main.19c4e311.chunk.js",
+    "main.js.map": "/super-rent-frontend/static/js/main.19c4e311.chunk.js.map",
     "runtime-main.js": "/super-rent-frontend/static/js/runtime-main.69122db4.js",
     "runtime-main.js.map": "/super-rent-frontend/static/js/runtime-main.69122db4.js.map",
     "static/js/2.14640b39.chunk.js": "/super-rent-frontend/static/js/2.14640b39.chunk.js",
     "static/js/2.14640b39.chunk.js.map": "/super-rent-frontend/static/js/2.14640b39.chunk.js.map",
     "index.html": "/super-rent-frontend/index.html",
-    "precache-manifest.a96d54f237300f63a000a8ab124691fc.js": "/super-rent-frontend/precache-manifest.a96d54f237300f63a000a8ab124691fc.js",
+    "precache-manifest.cba75de01c715b03434cf7f50990a46a.js": "/super-rent-frontend/precache-manifest.cba75de01c715b03434cf7f50990a46a.js",
     "service-worker.js": "/super-rent-frontend/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/super-rent-frontend/static/css/main.34de6062.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.69122db4.js",
     "static/js/2.14640b39.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.7f8d91e0.chunk.js"
+    "static/js/main.19c4e311.chunk.js"
   ]
 }
