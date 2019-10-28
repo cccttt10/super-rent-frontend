@@ -2,13 +2,14 @@ import React from 'react';
 import {
     TextField,
     ReferenceField,
-    DateField,
     BooleanField,
     SimpleShowLayout,
     Show
 } from 'react-admin';
 import CardActions from '@material-ui/core/CardActions';
 import { DeleteButton, EditButton } from 'react-admin';
+
+import CustomDateField from '../../reusables/CustomDateField';
 
 const RentShow = props => (
     <Show actions={<RentShowActions />} {...props} title=" ">
@@ -42,15 +43,13 @@ const RentShow = props => (
                 <TextField source="confNum" />
             </ReferenceField>
 
-            <DateField
+            <CustomDateField
                 source="fromDate"
                 label="From"
-                options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateField
+            <CustomDateField
                 source="toDate"
                 label="To"
-                options={{ format: 'YYYY-MM-dd' }}
             />
             <BooleanField source="isReturned" label="Returned?" />
         </SimpleShowLayout>

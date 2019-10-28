@@ -3,13 +3,13 @@ import {
     TextField,
     NumberField,
     RichTextField,
-    DateField,
     ReferenceField,
     SimpleShowLayout,
     Show
 } from 'react-admin';
 import CardActions from '@material-ui/core/CardActions';
 import { DeleteButton } from 'react-admin';
+import CustomDateField from '../../reusables/CustomDateField';
 
 const ReturnShow = props => (
     <Show actions={<ReturnShowActions />} {...props}>
@@ -23,10 +23,9 @@ const ReturnShow = props => (
                 <TextField source="rentId" />
             </ReferenceField>
 
-            <DateField
+            <CustomDateField
                 source="date"
                 label="Return Date"
-                options={{ format: 'YYYY-MM-dd' }}
             />
 
             <NumberField source="price" label="Price $" />

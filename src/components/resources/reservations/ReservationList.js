@@ -3,11 +3,11 @@ import {
     List,
     Datagrid,
     TextField,
-    DateField,
     ReferenceField,
     EditButton
 } from 'react-admin';
 import ReservationFilter from './ReservationFilter';
+import CustomDateField from '../../reusables/CustomDateField';
 
 const ReservationList = props => (
     <List {...props} filters={<ReservationFilter />}>
@@ -27,15 +27,13 @@ const ReservationList = props => (
                 <TextField source="driversLicence" />
             </ReferenceField>
 
-            <DateField
+            <CustomDateField
                 source="fromDate"
                 label="From"
-                options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateField
+            <CustomDateField
                 source="toDate"
                 label="To"
-                options={{ format: 'YYYY-MM-dd' }}
             />
             <EditButton />
         </Datagrid>

@@ -4,10 +4,10 @@ import {
     Datagrid,
     TextField,
     NumberField,
-    DateField,
     ReferenceField,
     ShowButton
 } from 'react-admin';
+import CustomDateField from '../../reusables/CustomDateField';
 
 const ReturnList = props => (
     <List {...props}>
@@ -21,10 +21,9 @@ const ReturnList = props => (
                 <TextField source="rentId" />
             </ReferenceField>
 
-            <DateField
+            <CustomDateField
                 source="date"
                 label="Return Date"
-                options={{ format: 'YYYY-MM-dd' }}
             />
 
             <NumberField source="price" label="Price $" />

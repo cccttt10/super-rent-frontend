@@ -3,11 +3,11 @@ import {
     Show,
     TextField,
     ReferenceField,
-    SimpleShowLayout,
-    DateField
+    SimpleShowLayout
 } from 'react-admin';
 import CardActions from '@material-ui/core/CardActions';
 import { DeleteButton, EditButton } from 'react-admin';
+import CustomDateField from '../../reusables/CustomDateField'
 
 const ReservationEdit = props => (
     <Show actions={<ReservationShowActions />} {...props}>
@@ -26,8 +26,8 @@ const ReservationEdit = props => (
                 <TextField source="driversLicence" />
             </ReferenceField>
 
-            <DateField source="fromDate" label="From" />
-            <DateField source="toDate" label="To" />
+            <CustomDateField source="fromDate" label="From" />
+            <CustomDateField source="toDate" label="To" />
         </SimpleShowLayout>
     </Show>
 );

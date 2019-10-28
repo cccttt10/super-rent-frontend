@@ -3,10 +3,10 @@ import {
     List,
     Datagrid,
     TextField,
-    DateField,
     ReferenceField,
     BooleanField
 } from 'react-admin';
+import CustomDateField from '../../reusables/CustomDateField';
 import CreateReturnButton from './CreateReturnButton';
 import RentShow from './RentShow';
 
@@ -42,15 +42,13 @@ const RentList = props => (
                 <TextField source="confNum" />
             </ReferenceField>
 
-            <DateField
+            <CustomDateField
                 source="fromDate"
                 label="From"
-                options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateField
+            <CustomDateField
                 source="toDate"
                 label="To"
-                options={{ format: 'YYYY-MM-dd' }}
             />
             <BooleanField source="isReturned" label="Returned?" />
             <CreateReturnButton />
