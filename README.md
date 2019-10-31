@@ -10,8 +10,8 @@
 
 Once your environment is configured, in the project root directory:
 
-1. `yarn install` to download the project's dependencies.
+1. `yarn install` to download the project's dependencies
 
-2. `yarn start` to start the web interface in development mode .
+2. `yarn start` to start the web interface in development mode 
 
-3. Visit `localhost:3000` in your browser.
+3. Visit `localhost:3000` in your browser
