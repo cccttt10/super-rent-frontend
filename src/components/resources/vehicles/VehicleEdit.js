@@ -10,7 +10,7 @@ import {
 import validateVehicle from './validateVehicle';
 
 const VehicleEdit = props => (
-    <Edit {...props}>
+    <Edit undoable={false} {...props}>
         <SimpleForm validate={validateVehicle}>
             <TextInput source="vehicleLicence" />
             <TextInput source="make" />
