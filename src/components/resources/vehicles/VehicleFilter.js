@@ -1,6 +1,7 @@
 import React from 'react';
 import { Filter, SelectInput, TextInput } from 'react-admin';
-import { DateInput } from 'react-admin-date-inputs';
+
+import CustomDateInput from '../../reusables/CustomDateInput';
 
 const VehicleFilter = props => (
     <Filter {...props}>
@@ -17,12 +18,12 @@ const VehicleFilter = props => (
             ]}
         />
         <TextInput label="City" source="city" defaultValue="Vancouver" />
-        <DateInput
+        <CustomDateInput
             source="fromDate"
             label="Available From"
             options={{ format: 'MM-dd-YYYY' }}
         />
-        <DateInput
+        <CustomDateInput
             source="toDate"
             label="Available Until"
             options={{ format: 'MM-dd-YYYY' }}
