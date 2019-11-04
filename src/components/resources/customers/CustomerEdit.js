@@ -4,7 +4,7 @@ import { Edit, SimpleForm, TextInput } from 'react-admin';
 import validateCustomer from './validateCustomer';
 
 const CustomerEdit = props => (
-    <Edit {...props}>
+    <Edit undoable={false} {...props}>
         <SimpleForm validate={validateCustomer}>
             <TextInput source="driversLicence" label="Driver's Licence" />
             <TextInput source="phone" />
