@@ -7,8 +7,8 @@ import {
     SelectInput,
     SimpleForm
 } from 'react-admin';
-import { DateInput } from 'react-admin-date-inputs';
 
+import CustomDateInput from '../../reusables/CustomDateInput';
 import validateReservation from './validateReservation';
 
 const ReservationEdit = props => (
@@ -41,12 +41,12 @@ const ReservationEdit = props => (
                 />
             </ReferenceInput>
 
-            <DateInput
+            <CustomDateInput
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateInput
+            <CustomDateInput
                 source="toDate"
                 label="To"
                 options={{ format: 'YYYY-MM-dd' }}

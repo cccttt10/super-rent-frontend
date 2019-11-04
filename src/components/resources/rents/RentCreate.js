@@ -1,7 +1,7 @@
 import React from 'react';
 import { AutocompleteInput, Create, ReferenceInput, SimpleForm } from 'react-admin';
-import { DateInput } from 'react-admin-date-inputs';
 
+import CustomDateInput from '../../reusables/CustomDateInput';
 import validateRent from './validateRent';
 
 const RentCreate = props => (
@@ -47,13 +47,12 @@ const RentCreate = props => (
                 />
             </ReferenceInput>
 
-            <DateInput
-                // defaultValue={moment().local()}
+            <CustomDateInput
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateInput
+            <CustomDateInput
                 source="toDate"
                 label="To"
                 options={{ format: 'YYYY-MM-dd' }}

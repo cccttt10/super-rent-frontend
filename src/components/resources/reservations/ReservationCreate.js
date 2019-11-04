@@ -1,4 +1,3 @@
-import * as moment from 'moment';
 import React from 'react';
 import {
     AutocompleteInput,
@@ -7,8 +6,8 @@ import {
     SelectInput,
     SimpleForm
 } from 'react-admin';
-import { DateInput } from 'react-admin-date-inputs';
 
+import CustomDateInput from '../../reusables/CustomDateInput';
 import validateReservation from './validateReservation';
 
 const ReservationCreate = props => (
@@ -40,13 +39,12 @@ const ReservationCreate = props => (
                 />
             </ReferenceInput>
 
-            <DateInput
-                defaultValue={moment()}
+            <CustomDateInput
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateInput
+            <CustomDateInput
                 source="toDate"
                 label="To"
                 options={{ format: 'YYYY-MM-dd' }}

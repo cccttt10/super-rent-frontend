@@ -6,8 +6,8 @@ import {
     ReferenceInput,
     SimpleForm
 } from 'react-admin';
-import { DateInput } from 'react-admin-date-inputs';
 
+import CustomDateInput from '../../reusables/CustomDateInput';
 import validateRent from './validateRent';
 
 const RentEdit = props => (
@@ -55,12 +55,12 @@ const RentEdit = props => (
                 />
             </ReferenceInput>
 
-            <DateInput
+            <CustomDateInput
                 source="fromDate"
                 label="From"
                 options={{ format: 'YYYY-MM-dd' }}
             />
-            <DateInput
+            <CustomDateInput
                 source="toDate"
                 label="To"
                 options={{ format: 'YYYY-MM-dd' }}

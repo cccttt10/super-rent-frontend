@@ -9021,6 +9021,29 @@ ra-core@^2.9.7:
     redux-saga "~0.16.0"
     reselect "~3.0.0"
 
+ra-core@^2.9.8:
+  version "2.9.8"
+  resolved "https://registry.yarnpkg.com/ra-core/-/ra-core-2.9.8.tgz#c667bb1cdffc802484a8c8b6f8b94d6b145e6db4"
+  integrity sha512-0fqXShFrndD7OrNCpF1lg9vL4JNbNTMR/SCzq2xeXMbzaP5SA2Wr28HDxrhA2e5NnO4zQ+/t+3EgMkw3iqyYwQ==
+  dependencies:
+    classnames "~2.2.5"
+    date-fns "^1.29.0"
+    inflection "~1.12.0"
+    lodash "~4.17.5"
+    node-polyglot "^2.2.2"
+    prop-types "~15.6.1"
+    query-string "~5.1.1"
+    ra-language-english "^2.9.3"
+    react-redux "~5.0.7"
+    react-router "^4.2.0"
+    react-router-dom "^4.2.0"
+    react-router-redux "~5.0.0-alpha.9"
+    recompose "~0.26.0"
+    redux "~3.7.2"
+    redux-form "~7.4.0"
+    redux-saga "~0.16.0"
+    reselect "~3.0.0"
+
 ra-data-json-server@^2.9.7:
   version "2.9.7"
   resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-2.9.7.tgz#5d927989662ff4ca5e7b70aefb7e66e357c4138e"

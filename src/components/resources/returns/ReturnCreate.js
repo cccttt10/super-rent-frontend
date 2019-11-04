@@ -1,7 +1,7 @@
 import React from 'react';
 import { AutocompleteInput, Create, ReferenceInput, SimpleForm } from 'react-admin';
-import { DateInput } from 'react-admin-date-inputs';
 
+import CustomDateInput from '../../reusables/CustomDateInput';
 import validateReturn from './validateReturn';
 
 const ReturnCreate = props => (
@@ -18,8 +18,7 @@ const ReturnCreate = props => (
                     optionText={choice => `${choice.rentId}`}
                 />
             </ReferenceInput>
-            <DateInput
-                // defaultValue={moment()}
+            <CustomDateInput
                 source="date"
                 label="Return Date"
                 options={{ format: 'YYYY-MM-dd' }}
