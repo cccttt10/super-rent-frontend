@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { AppBar } from 'react-admin';
 
+import ThemeButton from '../themes/ThemeButton';
 import Logo from './Logo';
 
 const styles = {
@@ -27,6 +28,13 @@ const CustomAppBar = ({ classes, ...props }) => (
         />
         <Logo />
         <span className={classes.spacer} />
+        <ThemeButton />
+        {/* <Tooltip  title="Toggle Theme">
+            <IconButton color="inherit">
+                <SunIcon color="white" />
+            </IconButton>
+        </Tooltip> */}
+        {/* <span className={classes.spacer} /> */}
     </AppBar>
 );
 

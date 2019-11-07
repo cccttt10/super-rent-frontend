@@ -11,6 +11,7 @@ import returns from './components/resources/returns/';
 
 import { Layout } from './components/layout/';
 import customRoutes from './util/routes';
+import themeReducer from './components/themes/reducer';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
         dashboard={Dashboard}
         dataProvider={dataProvider}
         customRoutes={customRoutes}
+        customReducers={{ theme: themeReducer }}
         appLayout={Layout}
     >
         <Resource name="customers" {...customers} />
