@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
 import Loader from '../reusables/Loader';
+import NameCard from '../reusables/NameCard';
 import NewRents from './NewRents';
 import NumCustomers from './NumCustomers';
 import NumVehicles from './NumVehicles';
@@ -84,9 +85,10 @@ class Dashboard extends Component {
                         <NumVehicles value={numVehicles} />
                     </div>
 
-                    <div style={styles.flex}>
+                    {/* <div style={styles.flex}>
                         <div style={styles.rightCol} />
-                    </div>
+                    </div> */}
+                    <NameCard />
                 </div>
 
                 <div style={styles.rightCol}>
