@@ -4,9 +4,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
+import { customersChart, vehiclesChart } from '../../data/charts';
 import PhotoChuntong from '../../img/chuntong.JPG';
 import PhotoFrank from '../../img/frank.JPG';
 import PhotoLily from '../../img/lily.JPG';
+import Chart from '../reusables/Chart';
 import Loader from '../reusables/Loader';
 import NameCard from '../reusables/NameCard';
 import NewRents from './NewRents';
@@ -139,6 +141,11 @@ class Dashboard extends Component {
                     <div style={styles.flex}>
                         <NewRents newRents={newRents} num={newRents.length} />
                     </div>
+                </div>
+
+                <div style={styles.leftCol}>
+                    <Chart data={customersChart} title="New Customers" />
+                    <Chart data={vehiclesChart} title="New Vehicles" />
                 </div>
             </div>
         );
