@@ -7,15 +7,12 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
-import PhotoChuntong from '../..//img/chuntong.JPG';
-// import PhotoFrank from '../../img/frank.JPG';
-// import PhotoLily from '../../img/lily.JPG';
-
 const styles = {
     main: {
         flex: '1',
         marginLeft: '1em',
-        marginTop: 35
+        marginTop: 20,
+        marginBottom: 20
     },
     mainCard: {
         overflow: 'inherit',
@@ -30,17 +27,18 @@ const styles = {
         width: 100,
         height: 100,
         overflow: 'hidden'
+    },
+    githubIcon: {
+        fontSize: '1.8rem',
+        paddingRight: 0,
+        paddingLeft: 0
     }
 };
 
-function NameCard({ classes }) {
+function NameCard({ classes, name, photo, github, linkedin, text }) {
     return (
         <div className={classes.main}>
-            <Avatar
-                src={PhotoChuntong}
-                className={classes.avatar}
-                variant="circle"
-            />
+            <Avatar src={photo} className={classes.avatar} variant="circle" />
             <Card className={classes.mainCard}>
                 <CardContent>
                     <Typography
@@ -49,20 +47,27 @@ function NameCard({ classes }) {
                         component="h1"
                         color="primary"
                     >
-                        Lizard
+                        {name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with
-                        over 6,000 species, ranging across all continents except
-                        Antarctica
-                    </Typography>
+                    {text}
                 </CardContent>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Share
+
+                <CardActions disableSpacing>
+                    <Button
+                        size="small"
+                        color="primary"
+                        className={classes.githubIcon}
+                        href={github}
+                    >
+                        <i className="fab fa-github" />
                     </Button>
-                    <Button size="small" color="primary">
-                        Learn More
+                    <Button
+                        size="small"
+                        color="primary"
+                        className={classes.githubIcon}
+                        href={linkedin}
+                    >
+                        <i className="fab fa-linkedin" />
                     </Button>
                 </CardActions>
             </Card>

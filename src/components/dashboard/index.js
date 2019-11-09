@@ -1,8 +1,12 @@
+import Typography from '@material-ui/core/Typography';
 import * as axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 
+import PhotoChuntong from '../../img/chuntong.JPG';
+import PhotoFrank from '../../img/frank.JPG';
+import PhotoLily from '../../img/lily.JPG';
 import Loader from '../reusables/Loader';
 import NameCard from '../reusables/NameCard';
 import NewRents from './NewRents';
@@ -49,12 +53,10 @@ class Dashboard extends Component {
             `${process.env.REACT_APP_API_URL}/reports/rents`
         );
         const data = responseRents.data;
-        // console.log(data);
         let newRents = [];
         for (const e of data) {
             newRents = newRents.concat(e.dailyRents);
         }
-        // console.log(newRents);
 
         const responseCustomers = await axios.get(
             `${process.env.REACT_APP_API_URL}/customers`
@@ -76,22 +78,64 @@ class Dashboard extends Component {
     render() {
         if (this.state.isLoading) return <Loader />;
         const { newRents, numCustomers, numVehicles } = this.state;
-
+        const chuntongText = (
+            <Typography variant="body2" color="textSecondary" component="p">
+                UI Prototyping <br />
+                E2E Implementation <br />
+                Documentation <br />
+                Deployment
+            </Typography>
+        );
+        const frankText = (
+            <Typography variant="body2" color="textSecondary" component="p">
+                Testing <br />
+                But Reports <br />
+                Database Design <br />
+                Task Automation <br />
+                Product Management
+            </Typography>
+        );
+        const lilyText = (
+            <Typography variant="body2" color="textSecondary" component="p">
+                Testing <br />
+                But Reports <br />
+                Database Design <br />
+                Task Automation <br />
+                Product Management
+            </Typography>
+        );
         return (
             <div style={styles.flex}>
-                <div style={styles.leftCol}>
+                <div style={styles.flexColumn}>
+                    <NameCard
+                        name="Chuntong Gao"
+                        photo={PhotoChuntong}
+                        github="https://github.com/chuntonggao"
+                        linkedin="https://www.linkedin.com/in/chuntonggao"
+                        text={chuntongText}
+                    />
+                    <NameCard
+                        name="Qizheng Zhou"
+                        photo={PhotoFrank}
+                        github="https://github.com/ethanhogq"
+                        linkedin="https://www.linkedin.com/in/qizheng-z-39673a14b/"
+                        text={frankText}
+                    />
+                    <NameCard
+                        name="Yifei Chen"
+                        photo={PhotoLily}
+                        github="https://github.com/lilycyf"
+                        linkedin="#"
+                        text={lilyText}
+                    />
+                </div>
+
+                <div style={styles.flexColumn}>
                     <div style={styles.flex}>
                         <NumCustomers value={numCustomers} />
                         <NumVehicles value={numVehicles} />
                     </div>
 
-                    {/* <div style={styles.flex}>
-                        <div style={styles.rightCol} />
-                    </div> */}
-                    <NameCard />
-                </div>
-
-                <div style={styles.rightCol}>
                     <div style={styles.flex}>
                         <NewRents newRents={newRents} num={newRents.length} />
                     </div>

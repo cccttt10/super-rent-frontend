@@ -14,8 +14,8 @@ import CardIcon from '../reusables/CardIcon';
 const styles = theme => ({
     main: {
         flex: '1',
-        marginRight: '1em',
-        marginTop: 20
+        marginTop: 35,
+        marginLeft: '1em'
     },
     titleLink: { textDecoration: 'none', color: 'inherit' },
     card: {
