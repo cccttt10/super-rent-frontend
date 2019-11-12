@@ -1,3 +1,8 @@
+# Instructions for local development
+
+Follow the instructions below if you want to get the project running on your local machine.
+
+
 ## Configure your environment
 
 1. Follow the [backend configuration instructions](https://github.com/chuntonggao/super-rent-backend/blob/master/README.md) to start the server in development mode. Make sure the server is started BEFORE you start the front end. Otherwise the front end cannot receive any data.
