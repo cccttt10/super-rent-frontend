@@ -1,6 +1,6 @@
 ## Configure your environment
 
-1. Follow the [backend configuration instructions](https://github.com/chuntonggao/super-rent-backend/blob/master/README.md) to start the server in development mode
+1. Follow the [backend configuration instructions](https://github.com/chuntonggao/super-rent-backend/blob/master/README.md) to start the server in development mode. Make sure the server is started BEFORE you start the front end. Otherwise the front end cannot receive any data.
 
 2. [Install Yarn](https://yarnpkg.com/lang/en/docs/install/)
 
