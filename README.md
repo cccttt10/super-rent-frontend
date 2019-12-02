@@ -1,3 +1,11 @@
+# Super Rent Front End
+
+![main-color](./assets/main-color.png)
+
+![main-transparent](./assets/main-transparent.png)
+
+> React.js front end for Super Rent car rental company
+ 
 ## Configure your environment
 
 1. Follow the [backend configuration instructions](https://github.com/chuntonggao/super-rent-backend/blob/master/README.md) to start the server in development mode
